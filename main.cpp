@@ -1,4 +1,5 @@
 #include <Novice.h>
+#include "SceneManager.h"
 
 const char kWindowTitle[] = "学籍番号";
 
@@ -6,11 +7,14 @@ const char kWindowTitle[] = "学籍番号";
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 
 	// ライブラリの初期化
-	Novice::Initialize(kWindowTitle, 1280, 720);
+	Novice::Initialize(kWindowTitle, kWorldWidth, kWorldHeight);
 
 	// キー入力結果を受け取る箱
-	char keys[256] = {0};
-	char preKeys[256] = {0};
+	char keys[256] = { 0 };
+	char preKeys[256] = { 0 };
+
+	// new
+	cSceneManager* sceneManagaer = new cSceneManager;
 
 	// ウィンドウの×ボタンが押されるまでループ
 	while (Novice::ProcessMessage() == 0) {
@@ -24,7 +28,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 		///
 		/// ↓更新処理ここから
 		///
-
+		sceneManagaer->Update(keys);
 		///
 		/// ↑更新処理ここまで
 		///
@@ -32,7 +36,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 		///
 		/// ↓描画処理ここから
 		///
-
+		sceneManagaer->Draw();
 		///
 		/// ↑描画処理ここまで
 		///
@@ -45,6 +49,9 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 			break;
 		}
 	}
+
+	// delete
+	delete sceneManagaer;
 
 	// ライブラリの終了
 	Novice::Finalize();

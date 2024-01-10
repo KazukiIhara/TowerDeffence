@@ -8,7 +8,8 @@ public:
 	~cPlayer();
 
 	void Init();
-	void Update();
+	void Operation(char *keys);
+	void Update(char *keys);
 	void Draw();
 
 private:

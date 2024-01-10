@@ -18,8 +18,30 @@ void cPlayer::Init()
 	rad = 32.0f;
 }
 
-void cPlayer::Update()
+void cPlayer::Operation(char *keys)
 {
+	if (keys[DIK_W])
+	{
+		position.y -= 4;
+	}
+	if (keys[DIK_S])
+	{
+		position.y += 4;
+	}
+	if (keys[DIK_A])
+	{
+		position.x -= 4;
+	}
+	if (keys[DIK_D])
+	{
+		position.x += 4;
+	}
+
+}
+
+void cPlayer::Update(char *keys)
+{
+	Operation(keys);
 
 }
 
