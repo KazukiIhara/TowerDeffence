@@ -18,6 +18,11 @@ void cHammer::Init()
 	position.y = kWorldHeight / 2.0f;
 }
 
+void cHammer::Update()
+{
+	
+}
+
 void cHammer::Draw()
 {
 	Novice::DrawEllipse(int(position.x), int(position.y), int(rad), int(rad), 0.0f, 0xffffffff, kFillModeSolid);

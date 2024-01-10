@@ -21,8 +21,9 @@ void cSceneGame::Init()
 
 void cSceneGame::Update(char* keys)
 {
-	
-	player->Update(keys);
+	player->Operation(keys);
+
+	player->Update();
 }
 
 void cSceneGame::Draw()

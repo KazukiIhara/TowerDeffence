@@ -8,7 +8,7 @@ public:
 	~cHammer();
 
 	void Init();
-
+	void Update();
 	void Draw();
 
 private:

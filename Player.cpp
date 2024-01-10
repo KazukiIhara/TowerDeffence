@@ -39,9 +39,14 @@ void cPlayer::Operation(char *keys)
 
 }
 
-void cPlayer::Update(char *keys)
+void cPlayer::Move()
 {
-	Operation(keys);
+
+}
+
+void cPlayer::Update()
+{
+	
 
 }
 

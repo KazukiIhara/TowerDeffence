@@ -9,7 +9,8 @@ public:
 
 	void Init();
 	void Operation(char *keys);
-	void Update(char *keys);
+	void Move();
+	void Update();
 	void Draw();
 
 private:
