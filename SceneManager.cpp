@@ -14,19 +14,20 @@ cSceneManager::~cSceneManager()
 
 void cSceneManager::Init()
 {
+	isDebug = true;
 	currentScene = Game;
 	nextScene = Game;
 	prevScene = Game;
 }
 
-void cSceneManager::Update(char* keys)
+void cSceneManager::Update(char* keys, char* preKeys)
 {
 	switch (currentScene)
 	{
 	case Title:
 		break;
 	case Game:
-		sceneGame->Update(keys);
+		sceneGame->Update(keys, preKeys);
 		break;
 	case Result:
 		break;

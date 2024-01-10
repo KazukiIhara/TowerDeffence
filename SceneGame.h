@@ -10,7 +10,7 @@ public:
 	~cSceneGame();
 
 	void Init();
-	void Update(char* keys);
+	void Update(char* keys, char* preKeys);
 	void Draw();
 
 

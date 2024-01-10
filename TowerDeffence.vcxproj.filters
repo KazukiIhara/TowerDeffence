@@ -71,6 +71,9 @@
     <ClCompile Include="SceneGame.cpp">
       <Filter>CPP\Scene</Filter>
     </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>CPP\Object</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="C:\KamataEngine\DirectXGame\audio\Audio.h">
@@ -158,6 +161,9 @@
     </ClInclude>
     <ClInclude Include="SceneGame.h">
       <Filter>HEDDER\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>HEDDER\Object</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
