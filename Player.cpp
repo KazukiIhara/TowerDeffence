@@ -50,11 +50,11 @@ void cPlayer::Operation(char* keys)
 	}
 	if (Novice::IsPressMouse(0))
 	{
-		speed = 0.1f;
+		speed = -0.1f;
 	}
 	if (Novice::IsPressMouse(1))
 	{
-		speed = -0.1f;
+		speed = 0.1f;
 	}
 }
 

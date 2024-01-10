@@ -18,6 +18,7 @@ public:
 	Vector2 GetPosition() { return position; }
 	float GetDistance() { return distance; }
 	float GetSpeed() { return speed; }
+	int GetHp() { return hp; }
 
 	//セッター////////////////////////
 	void SetPosition(Vector2 position_) { position = position_; }

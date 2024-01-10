@@ -2,6 +2,7 @@
 
 class cHammer;
 class cPlayer;
+class cEnemy;
 
 class cSceneGame
 {
@@ -12,11 +13,11 @@ public:
 	void Init();
 	void Update(char* keys, char* preKeys);
 	void Draw();
-
+	void DrawDebug();
 
 private:
 	cHammer* hammer;
 	cPlayer* player;
-
+	cEnemy* enemy;
 };
 

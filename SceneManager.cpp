@@ -1,5 +1,6 @@
 #include "SceneManager.h"
 #include "SceneGame.h"
+#include "Novice.h"
 
 cSceneManager::cSceneManager()
 {
@@ -22,6 +23,18 @@ void cSceneManager::Init()
 
 void cSceneManager::Update(char* keys, char* preKeys)
 {
+	if (keys[DIK_P] && !preKeys[DIK_P])
+	{
+		if (isDebug)
+		{
+			isDebug = false;
+		}
+		else
+		{
+			isDebug = true;
+		}
+	}
+
 	switch (currentScene)
 	{
 	case Title:
@@ -44,10 +57,15 @@ void cSceneManager::Draw()
 		break;
 	case Game:
 		sceneGame->Draw();
+		if (isDebug)
+		{
+			sceneGame->DrawDebug();
+		}
 		break;
 	case Result:
 		break;
 	default:
 		break;
 	}
+
 }

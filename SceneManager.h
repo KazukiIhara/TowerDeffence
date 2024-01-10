@@ -17,8 +17,8 @@ private:
 
 	cSceneGame* sceneGame;
 
-	bool isDebug;
 	eScene currentScene;
 	eScene nextScene;
 	eScene prevScene;
+	bool isDebug;
 };
