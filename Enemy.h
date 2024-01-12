@@ -1,4 +1,4 @@
-#pragma once
+Ôªø#pragma once
 #include "Struct.h"
 
 class cEnemy
@@ -12,11 +12,11 @@ public:
 	void Update();
 	void Draw();
 
-	//ÉQÉbÉ^Å[////////////////////////
+	//„Ç≤„ÉÉ„Çø„Éº////////////////////////
 	Vector2 GetPosition() { return position; }
 	int GetHp() { return hp; }
 
-	//ÉZÉbÉ^Å[////////////////////////
+	//„Çª„ÉÉ„Çø„Éº////////////////////////
 	void SetPosition(Vector2 position_) { position = position_; }
 	void SetHp(int hp_) { hp = hp_; }
 
