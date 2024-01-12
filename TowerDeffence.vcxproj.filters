@@ -72,7 +72,7 @@
       <Filter>Source\Scene</Filter>
     </ClCompile>
     <ClCompile Include="Enemy.cpp">
-      <Filter>CPP\Object</Filter>
+      <Filter>Source\Object</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -163,7 +163,7 @@
       <Filter>Include\Scene</Filter>
     </ClInclude>
     <ClInclude Include="Enemy.h">
-      <Filter>HEDDER\Object</Filter>
+      <Filter>Include\Object</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
