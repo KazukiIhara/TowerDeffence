@@ -10,7 +10,7 @@ public:
 	~cSceneManager();
 
 	void Init();
-	void Update(char* keys);
+	void Update(char* keys, char* preKeys);
 	void Draw();
 
 private:
@@ -20,4 +20,5 @@ private:
 	eScene currentScene;
 	eScene nextScene;
 	eScene prevScene;
+	bool isDebug;
 };

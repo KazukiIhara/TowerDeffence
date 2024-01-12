@@ -1,7 +1,7 @@
 #include <Novice.h>
 #include "SceneManager.h"
 
-const char kWindowTitle[] = "学籍番号";
+const char kWindowTitle[] = "PG2_STG";
 
 // Windowsアプリでのエントリーポイント(main関数)
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
@@ -28,7 +28,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 		///
 		/// ↓更新処理ここから
 		///
-		sceneManagaer->Update(keys);
+		sceneManagaer->Update(keys, preKeys);
 		///
 		/// ↑更新処理ここまで
 		///

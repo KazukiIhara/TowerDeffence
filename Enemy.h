@@ -1,28 +1,29 @@
 ﻿#pragma once
 #include "Struct.h"
 
-class cHammer
+class cEnemy
 {
 public:
-	cHammer();
-	~cHammer();
+	cEnemy();
+	~cEnemy();
 
 	void Init();
-	void Rotate(Vector2 position_, float distance, float speed);
+	void Damage();
 	void Update();
 	void Draw();
 
-
 	//ゲッター////////////////////////
 	Vector2 GetPosition() { return position; }
+	int GetHp() { return hp; }
 
 	//セッター////////////////////////
 	void SetPosition(Vector2 position_) { position = position_; }
+	void SetHp(int hp_) { hp = hp_; }
+
 private:
 	Vector2 position;
 	float rad;
-	float angle;
-
+	int hp;
+	int color;
 };
-
 
