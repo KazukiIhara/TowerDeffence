@@ -14,26 +14,26 @@
     <Filter Include="KamataEngine\Adapter">
       <UniqueIdentifier>{c6468eb4-788b-4a83-b207-a5f4804e56c5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="HEDDER">
-      <UniqueIdentifier>{02de486e-966a-478c-83cc-97a6e3044643}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="CPP">
-      <UniqueIdentifier>{78cbf570-f26f-47b0-b784-dd90a65e8271}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Data">
       <UniqueIdentifier>{d47c400d-72b4-4705-b056-085484ca45ed}</UniqueIdentifier>
     </Filter>
-    <Filter Include="HEDDER\Object">
-      <UniqueIdentifier>{c0460011-fa13-4010-8eff-7b369b36c5f3}</UniqueIdentifier>
+    <Filter Include="Source">
+      <UniqueIdentifier>{78cbf570-f26f-47b0-b784-dd90a65e8271}</UniqueIdentifier>
     </Filter>
-    <Filter Include="CPP\Object">
+    <Filter Include="Source\Object">
       <UniqueIdentifier>{cdd7ec1a-06f4-4717-963b-0d03135dff9d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="HEDDER\Scene">
-      <UniqueIdentifier>{d3ace9b8-bdca-4165-a7e6-b62cc8c70573}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="CPP\Scene">
+    <Filter Include="Source\Scene">
       <UniqueIdentifier>{1c3d73c6-354d-4bf6-9e58-4b1351c59c7a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include">
+      <UniqueIdentifier>{02de486e-966a-478c-83cc-97a6e3044643}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\Object">
+      <UniqueIdentifier>{c0460011-fa13-4010-8eff-7b369b36c5f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\Scene">
+      <UniqueIdentifier>{d3ace9b8-bdca-4165-a7e6-b62cc8c70573}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -60,16 +60,16 @@
       <Filter>KamataEngine\Source</Filter>
     </ClCompile>
     <ClCompile Include="Hammer.cpp">
-      <Filter>CPP\Object</Filter>
+      <Filter>Source\Object</Filter>
     </ClCompile>
     <ClCompile Include="Player.cpp">
-      <Filter>CPP\Object</Filter>
+      <Filter>Source\Object</Filter>
     </ClCompile>
     <ClCompile Include="SceneManager.cpp">
-      <Filter>CPP\Scene</Filter>
+      <Filter>Source\Scene</Filter>
     </ClCompile>
     <ClCompile Include="SceneGame.cpp">
-      <Filter>CPP\Scene</Filter>
+      <Filter>Source\Scene</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -148,16 +148,16 @@
       <Filter>Data</Filter>
     </ClInclude>
     <ClInclude Include="Hammer.h">
-      <Filter>HEDDER\Object</Filter>
+      <Filter>Include\Object</Filter>
     </ClInclude>
     <ClInclude Include="Player.h">
-      <Filter>HEDDER\Object</Filter>
+      <Filter>Include\Object</Filter>
     </ClInclude>
     <ClInclude Include="SceneManager.h">
-      <Filter>HEDDER\Scene</Filter>
+      <Filter>Include\Scene</Filter>
     </ClInclude>
     <ClInclude Include="SceneGame.h">
-      <Filter>HEDDER\Scene</Filter>
+      <Filter>Include\Scene</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
