@@ -14,26 +14,38 @@
     <Filter Include="KamataEngine\Adapter">
       <UniqueIdentifier>{c6468eb4-788b-4a83-b207-a5f4804e56c5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="HEDDER">
-      <UniqueIdentifier>{02de486e-966a-478c-83cc-97a6e3044643}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="CPP">
-      <UniqueIdentifier>{78cbf570-f26f-47b0-b784-dd90a65e8271}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Data">
       <UniqueIdentifier>{d47c400d-72b4-4705-b056-085484ca45ed}</UniqueIdentifier>
     </Filter>
-    <Filter Include="HEDDER\Object">
-      <UniqueIdentifier>{c0460011-fa13-4010-8eff-7b369b36c5f3}</UniqueIdentifier>
+    <Filter Include="Source">
+      <UniqueIdentifier>{78cbf570-f26f-47b0-b784-dd90a65e8271}</UniqueIdentifier>
     </Filter>
-    <Filter Include="CPP\Object">
+    <Filter Include="Source\Object">
       <UniqueIdentifier>{cdd7ec1a-06f4-4717-963b-0d03135dff9d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="HEDDER\Scene">
+    <Filter Include="Source\Scene">
+      <UniqueIdentifier>{1c3d73c6-354d-4bf6-9e58-4b1351c59c7a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include">
+      <UniqueIdentifier>{02de486e-966a-478c-83cc-97a6e3044643}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\Object">
+      <UniqueIdentifier>{c0460011-fa13-4010-8eff-7b369b36c5f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\Scene">
       <UniqueIdentifier>{d3ace9b8-bdca-4165-a7e6-b62cc8c70573}</UniqueIdentifier>
     </Filter>
-    <Filter Include="CPP\Scene">
-      <UniqueIdentifier>{1c3d73c6-354d-4bf6-9e58-4b1351c59c7a}</UniqueIdentifier>
+    <Filter Include="Source\Scene\SceneManager">
+      <UniqueIdentifier>{7d1bb96b-1c53-4619-af09-aa032ab9be22}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\Scene\SceneManager">
+      <UniqueIdentifier>{6fb7ff86-427a-458b-ae97-2d2b904d96a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\Scene\Scenes">
+      <UniqueIdentifier>{00f91328-bd1a-4c0c-a591-3e2e2994e43e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Scene\Scenes">
+      <UniqueIdentifier>{5c6affca-97f2-4f98-8506-2307702b5c70}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -60,19 +72,25 @@
       <Filter>KamataEngine\Source</Filter>
     </ClCompile>
     <ClCompile Include="Hammer.cpp">
-      <Filter>CPP\Object</Filter>
+      <Filter>Source\Object</Filter>
     </ClCompile>
     <ClCompile Include="Player.cpp">
-      <Filter>CPP\Object</Filter>
+      <Filter>Source\Object</Filter>
     </ClCompile>
     <ClCompile Include="SceneManager.cpp">
-      <Filter>CPP\Scene</Filter>
+      <Filter>Source\Scene\SceneManager</Filter>
     </ClCompile>
-    <ClCompile Include="SceneGame.cpp">
-      <Filter>CPP\Scene</Filter>
+    <ClCompile Include="BaseScene.cpp">
+      <Filter>Source\Scene\SceneManager</Filter>
     </ClCompile>
     <ClCompile Include="Enemy.cpp">
-      <Filter>CPP\Object</Filter>
+      <Filter>Source\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneGame.cpp">
+      <Filter>Source\Scene\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneTitle.cpp">
+      <Filter>Source\Scene\Scenes</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -151,19 +169,25 @@
       <Filter>Data</Filter>
     </ClInclude>
     <ClInclude Include="Hammer.h">
-      <Filter>HEDDER\Object</Filter>
+      <Filter>Include\Object</Filter>
     </ClInclude>
     <ClInclude Include="Player.h">
-      <Filter>HEDDER\Object</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneManager.h">
-      <Filter>HEDDER\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneGame.h">
-      <Filter>HEDDER\Scene</Filter>
+      <Filter>Include\Object</Filter>
     </ClInclude>
     <ClInclude Include="Enemy.h">
-      <Filter>HEDDER\Object</Filter>
+      <Filter>Include\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseScene.h">
+      <Filter>Include\Scene\SceneManager</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneManager.h">
+      <Filter>Include\Scene\SceneManager</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneGame.h">
+      <Filter>Include\Scene\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneTitle.h">
+      <Filter>Include\Scene\Scenes</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

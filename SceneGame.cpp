@@ -27,10 +27,12 @@ void cSceneGame::Init()
 
 void cSceneGame::Update(char* keys, char* preKeys)
 {
+	//　リセット
 	if (keys[DIK_R] && !preKeys[DIK_R])
 	{
 		Init();
 	}
+	// デバッグ用
 	if (keys[DIK_0])
 	{
 		int a;
