@@ -41,6 +41,9 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 		/// ↑描画処理ここまで
 		///
 
+		// シーンの変更処理
+		sceneManagaer->SceneChange();
+
 		// フレームの終了
 		Novice::EndFrame();
 
