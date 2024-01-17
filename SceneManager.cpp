@@ -2,6 +2,7 @@
 #include "Novice.h"
 #include "SceneTitle.h"
 #include "SceneGame.h"
+#include "SceneResult.h"
 
 cSceneManager::cSceneManager()
 {
@@ -32,12 +33,15 @@ void cSceneManager::SceneChange()
 		{
 		case Title:
 			delete pCurrentScene;
+			pCurrentScene = new cSceneTitle;
 			break;
 		case Game:
 			delete pCurrentScene;
 			pCurrentScene = new cSceneGame;
 			break;
 		case Result:
+			delete pCurrentScene;
+			pCurrentScene = new cSceneResult;
 			break;
 		default:
 			break;
@@ -66,6 +70,7 @@ void cSceneManager::Update(char* keys, char* preKeys)
 void cSceneManager::Draw()
 {
 	pCurrentScene->Draw();
+
 	if (isDebug)
 	{
 		pCurrentScene->DrawDebug();
