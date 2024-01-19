@@ -14,9 +14,6 @@
     <Filter Include="KamataEngine\Adapter">
       <UniqueIdentifier>{c6468eb4-788b-4a83-b207-a5f4804e56c5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Data">
-      <UniqueIdentifier>{d47c400d-72b4-4705-b056-085484ca45ed}</UniqueIdentifier>
-    </Filter>
     <Filter Include="GamePrograms">
       <UniqueIdentifier>{93a32d14-ca9d-44c2-aad8-94f2e90adeb0}</UniqueIdentifier>
     </Filter>
@@ -68,6 +65,9 @@
     <Filter Include="GamePrograms\Source\Object\Derived">
       <UniqueIdentifier>{b3c20b0c-3f61-4a00-a1ce-6f1d7871921b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Plugs">
+      <UniqueIdentifier>{d47c400d-72b4-4705-b056-085484ca45ed}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="C:\KamataEngine\DirectXGame\base\DirectXCommon.cpp">
@@ -115,6 +115,9 @@
     </ClCompile>
     <ClCompile Include="Hammer.cpp">
       <Filter>GamePrograms\Source\Object\Derived</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseBullet.cpp">
+      <Filter>GamePrograms\Source\Object\Base</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -189,8 +192,8 @@
     <ClInclude Include="C:\KamataEngine\DirectXGame\base\StringUtility.h">
       <Filter>KamataEngine\Include</Filter>
     </ClInclude>
-    <ClInclude Include="Struct.h">
-      <Filter>Data</Filter>
+    <ClInclude Include="MyIncludes.h">
+      <Filter>Plugs</Filter>
     </ClInclude>
     <ClInclude Include="SceneManager.h">
       <Filter>GamePrograms\Include\Scene\SceneManager</Filter>
@@ -215,6 +218,9 @@
     </ClInclude>
     <ClInclude Include="SceneTitle.h">
       <Filter>GamePrograms\Include\Scene\Derived</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseBullet.h">
+      <Filter>GamePrograms\Include\Object\Base</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

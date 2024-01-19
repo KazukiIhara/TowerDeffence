@@ -1,5 +1,5 @@
 #pragma once
-#include "Struct.h"
+#include "MyIncludes.h"
 #include "BaseScene.h"
 
 class cSceneTitle :public cBaseScene
