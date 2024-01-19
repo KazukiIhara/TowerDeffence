@@ -119,6 +119,9 @@
     <ClCompile Include="BaseBullet.cpp">
       <Filter>GamePrograms\Source\Object\Base</Filter>
     </ClCompile>
+    <ClCompile Include="MyIncludes.cpp">
+      <Filter>Plugs</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="C:\KamataEngine\DirectXGame\audio\Audio.h">

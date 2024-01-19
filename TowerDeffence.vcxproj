@@ -118,6 +118,7 @@ xcopy C:\KamataEngine\DirectXGame\Resources "$(OutDirFullPath)NoviceResources" /
     <ClCompile Include="C:\KamataEngine\DirectXGame\2d\ImGuiManager.cpp" />
     <ClCompile Include="C:\KamataEngine\Adapter\Novice.cpp" />
     <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="MyIncludes.cpp" />
     <ClCompile Include="SceneGame.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Hammer.cpp" />

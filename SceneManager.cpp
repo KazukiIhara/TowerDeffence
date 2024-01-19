@@ -18,9 +18,9 @@ cSceneManager::~cSceneManager()
 void cSceneManager::Init()
 {
 	isDebug = true;
-	currentScene = Title;
-	nextScene = Game;
-	prevScene = Title;
+	currentScene = TITLE;
+	nextScene = GAME;
+	prevScene = TITLE;
 }
 
 void cSceneManager::SceneChange()
@@ -31,15 +31,15 @@ void cSceneManager::SceneChange()
 		currentScene = nextScene;
 		switch (nextScene)
 		{
-		case Title:
+		case TITLE:
 			delete pCurrentScene;
 			pCurrentScene = new cSceneTitle;
 			break;
-		case Game:
+		case GAME:
 			delete pCurrentScene;
 			pCurrentScene = new cSceneGame;
 			break;
-		case Result:
+		case RESULT:
 			delete pCurrentScene;
 			pCurrentScene = new cSceneResult;
 			break;
