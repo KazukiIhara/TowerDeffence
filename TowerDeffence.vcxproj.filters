@@ -122,6 +122,9 @@
     <ClCompile Include="MyIncludes.cpp">
       <Filter>Plugs</Filter>
     </ClCompile>
+    <ClCompile Include="PlayerBullet.cpp">
+      <Filter>GamePrograms\Source\Object\Derived</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="C:\KamataEngine\DirectXGame\audio\Audio.h">
@@ -224,6 +227,9 @@
     </ClInclude>
     <ClInclude Include="BaseBullet.h">
       <Filter>GamePrograms\Include\Object\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerBullet.h">
+      <Filter>GamePrograms\Include\Object\Derived</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -5,14 +5,15 @@ class cBaseBullet
 {
 public:
 	cBaseBullet();
-	~cBaseBullet();
+	virtual~cBaseBullet();
 	virtual void Init();
 	virtual void Update();
 	void Move();
 	void Draw();
-private:
+protected:
 	Vector2 position;
 	Vector2 velosity;
+	float speed;
 	float radius;
 	int color;
 };

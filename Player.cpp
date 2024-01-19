@@ -13,8 +13,8 @@ cPlayer::~cPlayer()
 
 void cPlayer::Init()
 {
-	position.x = kWorldWidth / 2.0f;
-	position.y = kWorldHeight / 2.0f;
+	position.x = kScreenWidth / 2.0f;
+	position.y = kScreenHeight / 2.0f;
 	rad = 16.0f;
 	distance = 100.0f;
 	speed = 0.0f;

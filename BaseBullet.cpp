@@ -17,6 +17,7 @@ void cBaseBullet::Init()
 	position.y = 0.0f;
 	velosity.x = 0.0f;
 	velosity.y = 0.0f;
+	speed = 4.0f;
 	radius = 32.0f;
 	color = 0xffffffff;
 }
@@ -28,7 +29,7 @@ void cBaseBullet::Update()
 
 void cBaseBullet::Move()
 {
-
+	Add(position, velosity);
 }
 
 void cBaseBullet::Draw()

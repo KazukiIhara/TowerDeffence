@@ -1,17 +1,17 @@
-#pragma once
+ï»¿#pragma once
 #include "Vector2.h"
 #define _USE_MATH_DEFINES
 #include <math.h>
 #include <vector>
 #include <string>
 
-/*-----’è”-----*/
-const int kScreenWidth = 1920;//ƒXƒNƒŠ[ƒ“‚Ì‰¡•
-const int kScreenHeight = 1080;//ƒXƒNƒŠ[ƒ“‚Ìc•
+/*-----å®šæ•°-----*/
+const int kScreenWidth = 1920;//ã‚¹ã‚¯ãƒªãƒ¼ãƒ³ã®æ¨ªå¹…
+const int kScreenHeight = 1080;//ã‚¹ã‚¯ãƒªãƒ¼ãƒ³ã®ç¸¦å¹…
 
-/*-----—ñ‹“Œ^-----*/
+/*-----åˆ—æŒ™å‹-----*/
 
-enum eDirection//•ûŒü—ñ‹“Œ^
+enum eDirection//æ–¹å‘åˆ—æŒ™å‹
 {
 	UP,
 	LEFT,
@@ -19,7 +19,7 @@ enum eDirection//•ûŒü—ñ‹“Œ^
 	RIGHT
 };
 
-enum eScene//ƒV[ƒ“—ñ‹“Œ^
+enum eScene//ã‚·ãƒ¼ãƒ³åˆ—æŒ™å‹
 {
 	TITLE,
 	GAME,
@@ -27,7 +27,7 @@ enum eScene//ƒV[ƒ“—ñ‹“Œ^
 
 };
 
-enum eMapNum//ƒ}ƒbƒvƒ`ƒbƒv—ñ‹“Œ^
+enum eMapNum//ãƒãƒƒãƒ—ãƒãƒƒãƒ—åˆ—æŒ™å‹
 {
 	NONE,
 	BLOCK,
@@ -35,25 +35,25 @@ enum eMapNum//ƒ}ƒbƒvƒ`ƒbƒv—ñ‹“Œ^
 	GOAL
 };
 
-/*-----\‘¢‘Ì-----*/
+/*-----æ§‹é€ ä½“-----*/
 
-struct eTransform//intŒ^‚Ìx,y\‘¢‘Ì
+struct eTransform//intå‹ã®x,yæ§‹é€ ä½“
 {
 	int x;
 	int y;
 };
 
-struct Matrix2x2//2x2s—ñ
+struct Matrix2x2//2x2è¡Œåˆ—
 {
 	float m[2][2];
 };
 
-struct Matrix3x3//3x3s—ñ
+struct Matrix3x3//3x3è¡Œåˆ—
 {
 	float m[3][3];
 };
 
-struct ObjQuad//ƒIƒuƒWƒFƒNƒg‚Ìl‚ÂŠp\‘¢‘Ì
+struct ObjQuad//ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®å››ã¤è§’æ§‹é€ ä½“
 {
 	Vector2 leftTop;
 	Vector2 rightTop;
@@ -61,6 +61,6 @@ struct ObjQuad//ƒIƒuƒWƒFƒNƒg‚Ìl‚ÂŠp\‘¢‘Ì
 	Vector2 rightBottom;
 };
 
-/*-----ŠÖ”-----*/
+/*-----é–¢æ•°-----*/
 
 void Add(Vector2& v1, Vector2 v2);
