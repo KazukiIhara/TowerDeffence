@@ -17,7 +17,7 @@ void cEnemy::Init()
 	position.x = 0.0f;
 	position.y = float(rand() % 1080);
 	rad = 32.0f;
-	hp = 3;
+	hp = 1;
 	color = 0x000000ff;
 }
 

@@ -9,6 +9,7 @@
 const int kScreenWidth = 1920;//スクリーンの横幅
 const int kScreenHeight = 1080;//スクリーンの縦幅
 
+const int kBulletNum = 30;//弾の最大数
 /*-----列挙型-----*/
 
 enum eDirection//方向列挙型
@@ -36,6 +37,12 @@ enum eMapNum//マップチップ列挙型
 };
 
 /*-----構造体-----*/
+struct eBullet//弾構造体
+{
+	Vector2 position;
+	Vector2 velosity;
+	bool isActive;
+};
 
 struct eTransform//int型のx,y構造体
 {

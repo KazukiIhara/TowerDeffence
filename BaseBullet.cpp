@@ -13,33 +13,42 @@ cBaseBullet::~cBaseBullet()
 
 void cBaseBullet::Init()
 {
-	position.x = 0.0f;
-	position.y = 0.0f;
-	velosity.x = 0.0f;
-	velosity.y = 0.0f;
+	for (int i = 0; i < kBulletNum; i++)
+	{
+		bullet[i].position.x = 0.0f;
+		bullet[i].position.y = 0.0f;
+		bullet[i].velosity.x = 0.0f;
+		bullet[i].velosity.y = 0.0f;
+		bullet[i].isActive = false;
+	}
 	speed = 8.0f;
-	radius = 32.0f;
+	radius = 16.0f;
 	color = 0xffffffff;
-	isActive = false;
 }
 
 void cBaseBullet::Update()
 {
-	
+
 }
 
 void cBaseBullet::Move()
 {
-	if (isActive)
+	for (int i = 0; i < kBulletNum; i++)
 	{
-		Add(position, velosity);
+		if (bullet[i].isActive)
+		{
+			Add(bullet[i].position, bullet[i].velosity);
+		}
 	}
 }
 
 void cBaseBullet::Draw()
 {
-	if (isActive)
+	for (int i = 0; i < kBulletNum; i++)
 	{
-		Novice::DrawEllipse(int(position.x), int(position.y), int(radius), int(radius), 0.0f, color, kFillModeSolid);
+		if (bullet[i].isActive)
+		{
+			Novice::DrawEllipse(int(bullet[i].position.x), int(bullet[i].position.y), int(radius), int(radius), 0.0f, color, kFillModeSolid);
+		}
 	}
 }

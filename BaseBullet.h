@@ -12,16 +12,14 @@ public:
 	void Draw();
 
 	//ゲッター
-	bool GetIsActive() { return isActive; }
+	bool GetIsActive(int i) { return bullet[i].isActive; }
 
 	//セッター
-	void SetIsActive(bool isActive_) { isActive = isActive_; }
+	void SetIsActive(bool isActive_, int i) { bullet[i].isActive = isActive_; }
 protected:
-	Vector2 position;
-	Vector2 velosity;
+	eBullet bullet[kBulletNum];
 	float speed;
 	float radius;
 	int color;
-	bool isActive;
 };
 

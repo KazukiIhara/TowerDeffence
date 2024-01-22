@@ -87,10 +87,14 @@ void cPlayer::DrawLine(Vector2 pos_)
 
 void cPlayer::BulletShot(char* keys, char* preKeys)
 {
-	if (keys[DIK_SPACE] && !preKeys[DIK_SPACE] && !bullet->GetIsActive())
+	for (int i = 0; i < kBulletNum; i++)
 	{
-		bullet->SetIsActive(true);
-		speed *= -1.0f;
-		bullet->BulletInit(position, hammer->GetPosition(), distance);
+		if (keys[DIK_SPACE] && !preKeys[DIK_SPACE] && !bullet->GetIsActive(i))
+		{
+			bullet->SetIsActive(true, i);
+			speed *= -1.0f;
+			bullet->BulletInit(position, hammer->GetPosition(), distance, i);
+			break;
+		}
 	}
 }
