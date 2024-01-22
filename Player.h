@@ -1,6 +1,9 @@
 ﻿#pragma once
+#pragma once
 #include "MyIncludes.h"
 
+class cHammer;
+class cPlayerBullet;
 class cPlayer
 {
 public:
@@ -8,11 +11,12 @@ public:
 	~cPlayer();
 
 	void Init();
-	void Operation(char* keys);
+	void Operation(char* keys, char* preKeys);
 	void Move();
 	void Update();
 	void Draw();
 	void DrawLine(Vector2 pos_);
+	void BulletShot(char* keys, char* preKeys);
 
 	//ゲッター////////////////////////
 	Vector2 GetPosition() { return position; }
@@ -25,7 +29,10 @@ public:
 	void SetDistance(float distance_) { distance = distance_; }
 
 private:
+	cHammer* hammer;
+	cPlayerBullet* bullet;
 	Vector2 position;
+	Vector2 velosity;
 	float rad;
 	float distance;
 	float speed;

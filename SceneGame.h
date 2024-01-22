@@ -1,7 +1,6 @@
 #pragma once
 #include "BaseScene.h"
 
-class cHammer;
 class cPlayer;
 class cEnemy;
 
@@ -17,7 +16,6 @@ public:
 	void DrawDebug()override;
 
 private:
-	cHammer* hammer;
 	cPlayer* player;
 	cEnemy* enemy;
 };

@@ -1,43 +1,50 @@
 #include "Player.h"
 #include "Novice.h"
+#include "PlayerBullet.h"
+#include "Hammer.h"
 
 cPlayer::cPlayer()
 {
+	bullet = new cPlayerBullet;
+	hammer = new cHammer;
 	Init();
 }
 
 cPlayer::~cPlayer()
 {
-
+	delete hammer;
+	delete bullet;
 }
 
 void cPlayer::Init()
 {
+	hammer->Init();
+	bullet->Init();
 	position.x = kScreenWidth / 2.0f;
 	position.y = kScreenHeight / 2.0f;
 	rad = 16.0f;
 	distance = 100.0f;
-	speed = 0.0f;
+	speed = 0.1f;
 	hp = 3;
 }
 
-void cPlayer::Operation(char* keys)
+void cPlayer::Operation(char* keys, char* preKeys)
 {
 	if (keys[DIK_W])
 	{
-		position.y -= 4;
+		velosity.y -= 3;
 	}
 	if (keys[DIK_S])
 	{
-		position.y += 4;
+		velosity.y += 3;
 	}
 	if (keys[DIK_A])
 	{
-		position.x -= 4;
+		velosity.x -= 3;
 	}
 	if (keys[DIK_D])
 	{
-		position.x += 4;
+		velosity.x += 3;
 	}
 
 	if (keys[DIK_E])
@@ -48,32 +55,42 @@ void cPlayer::Operation(char* keys)
 	{
 		distance -= 10;
 	}
-	if (Novice::IsPressMouse(0))
-	{
-		speed = -0.1f;
-	}
-	if (Novice::IsPressMouse(1))
-	{
-		speed = 0.1f;
-	}
+	BulletShot(keys, preKeys);
 }
 
 void cPlayer::Move()
 {
-
+	Add(position, velosity);
+	hammer->Rotate(position, distance, speed);
+	bullet->Move();
 }
 
 void cPlayer::Update()
 {
-
+	velosity = { 0.0f,0.0f };
+	hammer->Update();
+	bullet->Update();
 }
 
 void cPlayer::Draw()
 {
+	DrawLine(hammer->GetPosition());
 	Novice::DrawEllipse(int(position.x), int(position.y), int(rad), int(rad), 0.0f, 0xffffffff, kFillModeSolid);
+	hammer->Draw();
+	bullet->Draw();
 }
 
 void cPlayer::DrawLine(Vector2 pos_)
 {
 	Novice::DrawLine(int(position.x), int(position.y), int(pos_.x), int(pos_.y), 0xffffffff);
+}
+
+void cPlayer::BulletShot(char* keys, char* preKeys)
+{
+	if (keys[DIK_SPACE] && !preKeys[DIK_SPACE] && !bullet->GetIsActive())
+	{
+		bullet->SetIsActive(true);
+		speed *= -1.0f;
+		bullet->BulletInit(position, hammer->GetPosition(), distance);
+	}
 }

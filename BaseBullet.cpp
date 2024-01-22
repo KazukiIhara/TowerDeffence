@@ -17,22 +17,29 @@ void cBaseBullet::Init()
 	position.y = 0.0f;
 	velosity.x = 0.0f;
 	velosity.y = 0.0f;
-	speed = 4.0f;
+	speed = 8.0f;
 	radius = 32.0f;
 	color = 0xffffffff;
+	isActive = false;
 }
 
 void cBaseBullet::Update()
 {
-
+	
 }
 
 void cBaseBullet::Move()
 {
-	Add(position, velosity);
+	if (isActive)
+	{
+		Add(position, velosity);
+	}
 }
 
 void cBaseBullet::Draw()
 {
-	Novice::DrawEllipse(int(position.x), int(position.y), int(radius), int(radius), 0.0f, color, kFillModeSolid);
+	if (isActive)
+	{
+		Novice::DrawEllipse(int(position.x), int(position.y), int(radius), int(radius), 0.0f, color, kFillModeSolid);
+	}
 }
