@@ -23,6 +23,9 @@ public:
 	float GetDistance() { return distance; }
 	float GetSpeed() { return speed; }
 	int GetHp() { return hp; }
+	Vector2 GetBulletPosition(int i);
+	float GetBulletRadius();
+	cPlayerBullet* GetBulletP(); 
 
 	//セッター////////////////////////
 	void SetPosition(Vector2 position_) { position = position_; }

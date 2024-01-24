@@ -13,6 +13,8 @@ public:
 
 	//ゲッター
 	bool GetIsActive(int i) { return bullet[i].isActive; }
+	Vector2 GetPosition(int i) { return bullet[i].position; }
+	float GetRadius() { return radius; }
 
 	//セッター
 	void SetIsActive(bool isActive_, int i) { bullet[i].isActive = isActive_; }

@@ -98,3 +98,9 @@ void cPlayer::BulletShot(char* keys, char* preKeys)
 		}
 	}
 }
+
+Vector2 cPlayer::GetBulletPosition(int i) { return bullet->GetPosition(i); }
+
+float cPlayer::GetBulletRadius() { return bullet->GetRadius(); }
+
+cPlayerBullet* cPlayer::GetBulletP() { return bullet; }
