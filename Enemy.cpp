@@ -5,7 +5,7 @@
 
 cEnemy::cEnemy()
 {
-	Init(LEFT, 0);
+	Init();
 }
 
 cEnemy::~cEnemy()
@@ -13,7 +13,17 @@ cEnemy::~cEnemy()
 
 }
 
-void cEnemy::Init(eDirection direction_, int spwanPosition)
+void cEnemy::Init()
+{
+	position = { 0.0f,0.0f };
+	velosity = { 0.0f,0.0f };
+	rad = 32.0f;
+	hp = 1;
+	color = 0x000000ff;
+	isActive = false;
+}
+
+void cEnemy::Pop(eDirection direction_, int spwanPosition)
 {
 	rad = 32.0f;
 	switch (direction_)
@@ -32,22 +42,22 @@ void cEnemy::Init(eDirection direction_, int spwanPosition)
 	switch (spwanPosition)
 	{
 	case 0:
-		position.y = rad;
-		break;
-	case 1:
-		position.y = rad * 2;
-		break;
-	case 2:
-		position.y = rad * 3;
-		break;
-	case 3:
-		position.y = rad * 4;
-		break;
-	case 4:
 		position.y = rad * 5;
 		break;
+	case 1:
+		position.y = rad * 10;
+		break;
+	case 2:
+		position.y = rad * 15;
+		break;
+	case 3:
+		position.y = rad * 20;
+		break;
+	case 4:
+		position.y = rad * 25;
+		break;
 	case 5:
-		position.y = rad * 6;
+		position.y = rad * 30;
 		break;
 	default:
 		break;
@@ -55,6 +65,7 @@ void cEnemy::Init(eDirection direction_, int spwanPosition)
 	hp = 1;
 	color = 0x000000ff;
 	isActive = true;
+
 }
 
 void cEnemy::Damage()

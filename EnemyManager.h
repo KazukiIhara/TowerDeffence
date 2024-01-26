@@ -9,6 +9,7 @@ public:
 	cEnemyManager();
 	~cEnemyManager();
 	void Init();
+	void EnemyPop();
 	void Move();
 	void BulletCollision(cPlayerBullet* bullet_, Vector2 pos_, float rad_, int i_);
 	void Update();

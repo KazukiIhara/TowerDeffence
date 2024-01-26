@@ -23,9 +23,26 @@ void cEnemyManager::Init()
 {
 	for (int i = 0; i < kEnemyNum; i++)
 	{
-		enemy[i]->Init(LEFT, i);
+		enemy[i]->Init();
 	}
 	enemySpwanTimer = 0;
+}
+
+void cEnemyManager::EnemyPop()
+{
+	if (!enemySpwanTimer)
+	{
+		enemySpwanTimer = 300;
+		for (int i = 0; i < kEnemyNum; i++)
+		{
+			if (!enemy[i]->GetIsActive())
+			{
+				enemy[i]->Pop(LEFT, rand() % 5);
+				break;
+			}
+
+		}
+	}
 }
 
 void cEnemyManager::Move()
@@ -50,6 +67,7 @@ void cEnemyManager::Update()
 	{
 		enemy[i]->Update();
 	}
+	enemySpwanTimer--;
 }
 
 void cEnemyManager::Draw()

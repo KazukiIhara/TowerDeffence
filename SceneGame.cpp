@@ -41,6 +41,7 @@ void cSceneGame::Update(char* keys, char* preKeys)
 	player->Operation(keys, preKeys);
 	// プレイヤーの入力受付処理ココまで
 
+	enemyManager->EnemyPop();
 
 	// マップチップのあたり判定ココから
 

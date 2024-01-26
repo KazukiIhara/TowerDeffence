@@ -8,7 +8,8 @@ public:
 	cEnemy();
 	~cEnemy();
 
-	void Init(eDirection direction_, int spwanPosition);
+	void Init();
+	void Pop(eDirection direction_, int spwanPosition);
 	void Damage();
 	void Move();
 	void Update();
@@ -19,6 +20,7 @@ public:
 	//ゲッター////////////////////////
 	Vector2 GetPosition() { return position; }
 	int GetHp() { return hp; }
+	bool GetIsActive() { return isActive; }
 
 	//セッター////////////////////////
 	void SetPosition(Vector2 position_) { position = position_; }
@@ -32,4 +34,3 @@ private:
 	int color;
 	bool isActive;
 };
-
