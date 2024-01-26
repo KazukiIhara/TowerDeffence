@@ -2,7 +2,10 @@
 #pragma once
 #include "MyIncludes.h"
 
+<<<<<<< HEAD
 class cHammer;
+=======
+>>>>>>> 弾発射処理を追加
 class cPlayerBullet;
 class cPlayer
 {

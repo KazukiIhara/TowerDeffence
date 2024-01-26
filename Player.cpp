@@ -1,7 +1,10 @@
 #include "Player.h"
 #include "Novice.h"
 #include "PlayerBullet.h"
+<<<<<<< HEAD
 #include "Hammer.h"
+=======
+>>>>>>> 弾発射処理を追加
 
 cPlayer::cPlayer()
 {
@@ -22,6 +25,8 @@ void cPlayer::Init()
 	bullet->Init();
 	position.x = kScreenWidth / 2.0f;
 	position.y = kScreenHeight / 2.0f;
+	velosity.x = 0.0f;
+	velosity.y = 0.0f;
 	rad = 16.0f;
 	distance = 100.0f;
 	speed = 0.1f;
@@ -55,14 +60,28 @@ void cPlayer::Operation(char* keys, char* preKeys)
 	{
 		distance -= 10;
 	}
+<<<<<<< HEAD
+=======
+	if (Novice::IsPressMouse(0))
+	{
+		speed = -0.1f;
+	}
+	if (Novice::IsPressMouse(1))
+	{
+		speed = 0.1f;
+	}
+>>>>>>> 弾発射処理を追加
 	BulletShot(keys, preKeys);
 }
 
 void cPlayer::Move()
 {
 	Add(position, velosity);
+<<<<<<< HEAD
 	hammer->Rotate(position, distance, speed);
 	bullet->Move();
+=======
+>>>>>>> 弾発射処理を追加
 }
 
 void cPlayer::Update()
@@ -87,6 +106,7 @@ void cPlayer::DrawLine(Vector2 pos_)
 
 void cPlayer::BulletShot(char* keys, char* preKeys)
 {
+<<<<<<< HEAD
 	for (int i = 0; i < kBulletNum; i++)
 	{
 		if (keys[DIK_SPACE] && !preKeys[DIK_SPACE] && !bullet->GetIsActive(i))
@@ -104,3 +124,10 @@ Vector2 cPlayer::GetBulletPosition(int i) { return bullet->GetPosition(i); }
 float cPlayer::GetBulletRadius() { return bullet->GetRadius(); }
 
 cPlayerBullet* cPlayer::GetBulletP() { return bullet; }
+=======
+	if (keys[DIK_SPACE] && !preKeys[DIK_SPACE])
+	{
+
+	}
+}
+>>>>>>> 弾発射処理を追加
