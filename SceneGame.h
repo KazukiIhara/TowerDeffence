@@ -3,6 +3,7 @@
 
 class cPlayer;
 class cEnemy;
+class cEnemyManager;
 
 class cSceneGame :public cBaseScene
 {
@@ -16,7 +17,9 @@ public:
 	void DrawDebug()override;
 
 private:
+	int currentGameFlame;
 	cPlayer* player;
 	cEnemy* enemy;
+	cEnemyManager* enemyManager;
 };
 

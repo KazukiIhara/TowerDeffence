@@ -8,8 +8,9 @@ public:
 	cEnemy();
 	~cEnemy();
 
-	void Init();
+	void Init(eDirection direction_, int spwanPosition);
 	void Damage();
+	void Move();
 	void Update();
 	void Draw();
 
@@ -25,6 +26,7 @@ public:
 
 private:
 	Vector2 position;
+	Vector2 velosity;
 	float rad;
 	int hp;
 	int color;

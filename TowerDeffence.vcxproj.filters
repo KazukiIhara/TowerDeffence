@@ -70,6 +70,12 @@
       <UniqueIdentifier>{d47c400d-72b4-4705-b056-085484ca45ed}</UniqueIdentifier>
 
     </Filter>
+    <Filter Include="GamePrograms\Include\Object\Manager">
+      <UniqueIdentifier>{bee14b23-fa7f-4ffa-80c0-0e91ccf66394}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GamePrograms\Source\Object\Manager">
+      <UniqueIdentifier>{c6440439-59f6-410e-8346-064a0d647334}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="C:\KamataEngine\DirectXGame\base\DirectXCommon.cpp">
@@ -128,6 +134,9 @@
     <ClCompile Include="PlayerBullet.cpp">
       <Filter>GamePrograms\Source\Object\Derived</Filter>
 
+    </ClCompile>
+    <ClCompile Include="EnemyManager.cpp">
+      <Filter>GamePrograms\Source\Object\Manager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -236,6 +245,9 @@
     <ClInclude Include="PlayerBullet.h">
       <Filter>GamePrograms\Include\Object\Derived</Filter>
 
+    </ClInclude>
+    <ClInclude Include="EnemyManager.h">
+      <Filter>GamePrograms\Include\Object\Manager</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
