@@ -1,24 +1,52 @@
 #include "SceneManager.h"
-#include "SceneGame.h"
 #include "Novice.h"
+#include "SceneTitle.h"
+#include "SceneGame.h"
+#include "SceneResult.h"
 
 cSceneManager::cSceneManager()
 {
 	Init();
-	sceneGame = new cSceneGame;
+	pCurrentScene = new cSceneTitle;
 }
 
 cSceneManager::~cSceneManager()
 {
-	delete sceneGame;
+	delete pCurrentScene;
 }
 
 void cSceneManager::Init()
 {
 	isDebug = true;
-	currentScene = Game;
-	nextScene = Game;
-	prevScene = Game;
+	currentScene = TITLE;
+	nextScene = GAME;
+	prevScene = TITLE;
+}
+
+void cSceneManager::SceneChange()
+{
+	if (currentScene != nextScene)
+	{
+		prevScene = currentScene;
+		currentScene = nextScene;
+		switch (nextScene)
+		{
+		case TITLE:
+			delete pCurrentScene;
+			pCurrentScene = new cSceneTitle;
+			break;
+		case GAME:
+			delete pCurrentScene;
+			pCurrentScene = new cSceneGame;
+			break;
+		case RESULT:
+			delete pCurrentScene;
+			pCurrentScene = new cSceneResult;
+			break;
+		default:
+			break;
+		}
+	}
 }
 
 void cSceneManager::Update(char* keys, char* preKeys)
@@ -35,37 +63,17 @@ void cSceneManager::Update(char* keys, char* preKeys)
 		}
 	}
 
-	switch (currentScene)
-	{
-	case Title:
-		break;
-	case Game:
-		sceneGame->Update(keys, preKeys);
-		break;
-	case Result:
-		break;
-	default:
-		break;
-	}
+	pCurrentScene->Update(keys, preKeys);
+
 }
 
 void cSceneManager::Draw()
 {
-	switch (currentScene)
+	pCurrentScene->Draw();
+
+	if (isDebug)
 	{
-	case Title:
-		break;
-	case Game:
-		sceneGame->Draw();
-		if (isDebug)
-		{
-			sceneGame->DrawDebug();
-		}
-		break;
-	case Result:
-		break;
-	default:
-		break;
+		pCurrentScene->DrawDebug();
 	}
 
 }

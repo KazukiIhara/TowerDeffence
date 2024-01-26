@@ -1,7 +1,7 @@
 #pragma once
-#include "Struct.h"
+#include "MyIncludes.h"
 
-class cSceneGame;
+class cBaseScene;
 
 class cSceneManager
 {
@@ -10,12 +10,13 @@ public:
 	~cSceneManager();
 
 	void Init();
+	void SceneChange();
 	void Update(char* keys, char* preKeys);
 	void Draw();
 
 private:
 
-	cSceneGame* sceneGame;
+	cBaseScene* pCurrentScene;
 
 	eScene currentScene;
 	eScene nextScene;

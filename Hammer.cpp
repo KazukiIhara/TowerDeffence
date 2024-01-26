@@ -14,8 +14,8 @@ cHammer::~cHammer()
 void cHammer::Init()
 {
 	rad = 24.0f;
-	position.x = kWorldWidth / 2.0f;
-	position.y = kWorldHeight / 2.0f;
+	position.x = kScreenWidth / 2.0f;
+	position.y = kScreenHeight / 2.0f;
 	angle = 0.0f;
 }
 

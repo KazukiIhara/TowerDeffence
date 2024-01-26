@@ -14,26 +14,61 @@
     <Filter Include="KamataEngine\Adapter">
       <UniqueIdentifier>{c6468eb4-788b-4a83-b207-a5f4804e56c5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Data">
-      <UniqueIdentifier>{d47c400d-72b4-4705-b056-085484ca45ed}</UniqueIdentifier>
+
+    <Filter Include="GamePrograms">
+      <UniqueIdentifier>{93a32d14-ca9d-44c2-aad8-94f2e90adeb0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source">
-      <UniqueIdentifier>{78cbf570-f26f-47b0-b784-dd90a65e8271}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source\Object">
-      <UniqueIdentifier>{cdd7ec1a-06f4-4717-963b-0d03135dff9d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source\Scene">
-      <UniqueIdentifier>{1c3d73c6-354d-4bf6-9e58-4b1351c59c7a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Include">
+    <Filter Include="GamePrograms\Include">
       <UniqueIdentifier>{02de486e-966a-478c-83cc-97a6e3044643}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Include\Object">
+    <Filter Include="GamePrograms\Include\Object">
       <UniqueIdentifier>{c0460011-fa13-4010-8eff-7b369b36c5f3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Include\Scene">
+    <Filter Include="GamePrograms\Include\Object\Base">
+      <UniqueIdentifier>{3280b8fb-9ca1-48e1-b064-774455565a7b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GamePrograms\Include\Object\Derived">
+      <UniqueIdentifier>{22cbd7a5-cb6c-4cca-9aae-6b34c4a6262c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GamePrograms\Include\Scene">
       <UniqueIdentifier>{d3ace9b8-bdca-4165-a7e6-b62cc8c70573}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GamePrograms\Include\Scene\SceneManager">
+      <UniqueIdentifier>{6fb7ff86-427a-458b-ae97-2d2b904d96a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GamePrograms\Include\Scene\Base">
+      <UniqueIdentifier>{1f9cb923-f7de-4f6a-93ed-ece554de15d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GamePrograms\Include\Scene\Derived">
+      <UniqueIdentifier>{e605f4ed-bee7-4065-8210-74ada6b1d5c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GamePrograms\Source">
+      <UniqueIdentifier>{78cbf570-f26f-47b0-b784-dd90a65e8271}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GamePrograms\Source\Object">
+      <UniqueIdentifier>{cdd7ec1a-06f4-4717-963b-0d03135dff9d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GamePrograms\Source\Scene">
+      <UniqueIdentifier>{1c3d73c6-354d-4bf6-9e58-4b1351c59c7a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GamePrograms\Source\Scene\SceneManager">
+      <UniqueIdentifier>{7d1bb96b-1c53-4619-af09-aa032ab9be22}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GamePrograms\Source\Scene\Base">
+      <UniqueIdentifier>{45677a69-e9eb-4858-8585-582d04f65e13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GamePrograms\Source\Scene\Derived">
+      <UniqueIdentifier>{bbacfcb9-0781-4d2a-bb40-6ecb147c0c06}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GamePrograms\Source\Object\Base">
+      <UniqueIdentifier>{d3db4305-8d37-4e82-9d01-c402089faf30}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GamePrograms\Source\Object\Derived">
+      <UniqueIdentifier>{b3c20b0c-3f61-4a00-a1ce-6f1d7871921b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Plugs">
+      <UniqueIdentifier>{d47c400d-72b4-4705-b056-085484ca45ed}</UniqueIdentifier>
+
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -59,20 +94,40 @@
     <ClCompile Include="C:\KamataEngine\DirectXGame\base\StringUtility.cpp">
       <Filter>KamataEngine\Source</Filter>
     </ClCompile>
-    <ClCompile Include="Hammer.cpp">
-      <Filter>Source\Object</Filter>
-    </ClCompile>
-    <ClCompile Include="Player.cpp">
-      <Filter>Source\Object</Filter>
-    </ClCompile>
+
     <ClCompile Include="SceneManager.cpp">
-      <Filter>Source\Scene</Filter>
+      <Filter>GamePrograms\Source\Scene\SceneManager</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseScene.cpp">
+      <Filter>GamePrograms\Source\Scene\Base</Filter>
     </ClCompile>
     <ClCompile Include="SceneGame.cpp">
-      <Filter>Source\Scene</Filter>
+      <Filter>GamePrograms\Source\Scene\Derived</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneResult.cpp">
+      <Filter>GamePrograms\Source\Scene\Derived</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneTitle.cpp">
+      <Filter>GamePrograms\Source\Scene\Derived</Filter>
     </ClCompile>
     <ClCompile Include="Enemy.cpp">
-      <Filter>Source\Object</Filter>
+      <Filter>GamePrograms\Source\Object\Derived</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>GamePrograms\Source\Object\Derived</Filter>
+    </ClCompile>
+    <ClCompile Include="Hammer.cpp">
+      <Filter>GamePrograms\Source\Object\Derived</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseBullet.cpp">
+      <Filter>GamePrograms\Source\Object\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="MyIncludes.cpp">
+      <Filter>Plugs</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerBullet.cpp">
+      <Filter>GamePrograms\Source\Object\Derived</Filter>
+
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -147,23 +202,40 @@
     <ClInclude Include="C:\KamataEngine\DirectXGame\base\StringUtility.h">
       <Filter>KamataEngine\Include</Filter>
     </ClInclude>
-    <ClInclude Include="Struct.h">
-      <Filter>Data</Filter>
+    <ClInclude Include="MyIncludes.h">
+      <Filter>Plugs</Filter>
     </ClInclude>
-    <ClInclude Include="Hammer.h">
-      <Filter>Include\Object</Filter>
-    </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>Include\Object</Filter>
-    </ClInclude>
+
     <ClInclude Include="SceneManager.h">
-      <Filter>Include\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneGame.h">
-      <Filter>Include\Scene</Filter>
+      <Filter>GamePrograms\Include\Scene\SceneManager</Filter>
     </ClInclude>
     <ClInclude Include="Enemy.h">
-      <Filter>Include\Object</Filter>
+      <Filter>GamePrograms\Include\Object\Derived</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>GamePrograms\Include\Object\Derived</Filter>
+    </ClInclude>
+    <ClInclude Include="Hammer.h">
+      <Filter>GamePrograms\Include\Object\Derived</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseScene.h">
+      <Filter>GamePrograms\Include\Scene\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneGame.h">
+      <Filter>GamePrograms\Include\Scene\Derived</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneResult.h">
+      <Filter>GamePrograms\Include\Scene\Derived</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneTitle.h">
+      <Filter>GamePrograms\Include\Scene\Derived</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseBullet.h">
+      <Filter>GamePrograms\Include\Object\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerBullet.h">
+      <Filter>GamePrograms\Include\Object\Derived</Filter>
+
     </ClInclude>
   </ItemGroup>
 </Project>

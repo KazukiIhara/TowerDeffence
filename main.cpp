@@ -7,7 +7,7 @@ const char kWindowTitle[] = "PG2_STG";
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 
 	// ライブラリの初期化
-	Novice::Initialize(kWindowTitle, kWorldWidth, kWorldHeight);
+	Novice::Initialize(kWindowTitle, kScreenWidth, kScreenHeight);
 
 	// キー入力結果を受け取る箱
 	char keys[256] = { 0 };
@@ -40,6 +40,9 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 		///
 		/// ↑描画処理ここまで
 		///
+
+		// シーンの変更処理
+		sceneManagaer->SceneChange();
 
 		// フレームの終了
 		Novice::EndFrame();
