@@ -8,7 +8,7 @@ public:
 	virtual ~cBaseScene();
 
 	virtual void Init();
-	virtual void Update(char* keys, char* preKeys);
+	virtual void Update(char* keys, char* preKeys, eScene& nextScene);
 	virtual void Draw();
 	virtual void DrawDebug();
 

@@ -12,6 +12,12 @@ const int kScreenHeight = 1080;//スクリーンの縦幅
 const int kBulletNum = 30;//弾の最大数
 /*-----列挙型-----*/
 
+enum eTitleMenu
+{
+	GAMESTART,
+	EXIT
+};
+
 enum eDirection//方向列挙型
 {
 	UP,

@@ -19,7 +19,7 @@ void cSceneManager::Init()
 {
 	isDebug = true;
 	currentScene = TITLE;
-	nextScene = GAME;
+	nextScene = TITLE;
 	prevScene = TITLE;
 }
 
@@ -63,7 +63,7 @@ void cSceneManager::Update(char* keys, char* preKeys)
 		}
 	}
 
-	pCurrentScene->Update(keys, preKeys);
+	pCurrentScene->Update(keys, preKeys, nextScene);
 
 }
 

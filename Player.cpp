@@ -28,6 +28,7 @@ void cPlayer::Init()
 	distance = 100.0f;
 	speed = 0.1f;
 	hp = 3;
+	isActive = true;
 }
 
 void cPlayer::Operation(char* keys, char* preKeys)
@@ -58,6 +59,12 @@ void cPlayer::Operation(char* keys, char* preKeys)
 		distance -= 10;
 	}
 	BulletShot(keys, preKeys);
+
+	// forDebug
+	if (keys[DIK_DOWN] && !preKeys[DIK_DOWN])
+	{
+		hp--;
+	}
 }
 
 void cPlayer::Move()
@@ -67,11 +74,20 @@ void cPlayer::Move()
 	bullet->Move();
 }
 
-void cPlayer::Update()
+void cPlayer::Update(eScene& nextScene)
 {
 	velosity = { 0.0f,0.0f };
 	hammer->Update();
 	bullet->Update();
+
+	if (hp == 0)
+	{
+		isActive = false;
+	}
+	if (!isActive)
+	{
+		nextScene = RESULT;
+	}
 }
 
 void cPlayer::Draw()

@@ -23,7 +23,7 @@ void cSceneGame::Init()
 	enemyManager->Init();
 }
 
-void cSceneGame::Update(char* keys, char* preKeys)
+void cSceneGame::Update(char* keys, char* preKeys, eScene& nextScene)
 {
 	//　リセット
 	if (keys[DIK_R] && !preKeys[DIK_R])
@@ -62,7 +62,7 @@ void cSceneGame::Update(char* keys, char* preKeys)
 
 
 	// 状態の更新ココから
-	player->Update();
+	player->Update(nextScene);
 	enemyManager->Update();
 	// 状態の更新ココまで
 }
@@ -77,4 +77,5 @@ void cSceneGame::DrawDebug()
 {
 	Novice::ScreenPrintf(int(player->GetPosition().x) + 30, int(player->GetPosition().y) - 30,
 		"HP %d", player->GetHp());
+	Novice::ScreenPrintf(12, 24, "currentScene: GAME");
 }

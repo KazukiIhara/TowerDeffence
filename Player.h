@@ -13,7 +13,7 @@ public:
 	void Init();
 	void Operation(char* keys, char* preKeys);
 	void Move();
-	void Update();
+	void Update(eScene& nextScene);
 	void Draw();
 	void DrawLine(Vector2 pos_);
 	void BulletShot(char* keys, char* preKeys);
@@ -25,7 +25,7 @@ public:
 	int GetHp() { return hp; }
 	Vector2 GetBulletPosition(int i);
 	float GetBulletRadius();
-	cPlayerBullet* GetBulletP(); 
+	cPlayerBullet* GetBulletP();
 
 	//セッター////////////////////////
 	void SetPosition(Vector2 position_) { position = position_; }
@@ -40,4 +40,5 @@ private:
 	float distance;
 	float speed;
 	int hp;
+	bool isActive;
 };

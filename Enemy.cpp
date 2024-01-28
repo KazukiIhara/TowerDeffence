@@ -101,7 +101,7 @@ void cEnemy::BulletColliosion(cPlayerBullet* bullet, Vector2 pos_, float rad_, i
 		{
 			float distance = sqrtf(powf(pos_.x - position.x, 2) + powf(pos_.y - position.y, 2));
 			float radLen = rad + rad_;
-			if (distance <= radLen)
+			if (distance < radLen)
 			{
 				isActive = false;
 				bullet->SetIsActive(false, i);

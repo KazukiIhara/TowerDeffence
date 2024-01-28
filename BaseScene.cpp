@@ -15,9 +15,9 @@ void cBaseScene::Init()
 
 }
 
-void cBaseScene::Update(char* keys, char* preKeys)
+void cBaseScene::Update(char* keys, char* preKeys, eScene& nextScene)
 {
-	keys; preKeys;
+	keys; preKeys; nextScene;
 }
 
 void cBaseScene::Draw()
