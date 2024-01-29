@@ -64,6 +64,7 @@ void cSceneGame::Update(char* keys, char* preKeys, eScene& nextScene)
 	// 状態の更新ココから
 	player->Update(nextScene);
 	enemyManager->Update();
+	currentGameFlame++;
 	// 状態の更新ココまで
 }
 
@@ -78,4 +79,5 @@ void cSceneGame::DrawDebug()
 	Novice::ScreenPrintf(int(player->GetPosition().x) + 30, int(player->GetPosition().y) - 30,
 		"HP %d", player->GetHp());
 	Novice::ScreenPrintf(12, 24, "currentScene: GAME");
+	Novice::ScreenPrintf(12, 24 * 2, "currentGameFlame: %d", currentGameFlame);
 }
