@@ -32,33 +32,56 @@ void cEnemy::Pop(int direction_, int spwanPosition)
 	case 0:
 		position.x = -rad;
 		velosity = { 3.0f,0.0f };
+		switch (spwanPosition)
+		{
+		case 0:
+			position.y = rad * 5;
+			break;
+		case 1:
+			position.y = rad * 10;
+			break;
+		case 2:
+			position.y = rad * 15;
+			break;
+		case 3:
+			position.y = rad * 20;
+			break;
+		case 4:
+			position.y = rad * 25;
+			break;
+		case 5:
+			position.y = rad * 30;
+			break;
+		default:
+			break;
+		}
 		break;
 	case 1:
 		position.x = rad + kScreenWidth;
 		velosity = { -3.0f,0.0f };
-		break;
-	default:
-		break;
-	}
-	switch (spwanPosition)
-	{
-	case 0:
-		position.y = rad * 5;
-		break;
-	case 1:
-		position.y = rad * 10;
-		break;
-	case 2:
-		position.y = rad * 15;
-		break;
-	case 3:
-		position.y = rad * 20;
-		break;
-	case 4:
-		position.y = rad * 25;
-		break;
-	case 5:
-		position.y = rad * 30;
+		switch (spwanPosition)
+		{
+		case 0:
+			position.y = rad * 8;
+			break;
+		case 1:
+			position.y = rad * 13;
+			break;
+		case 2:
+			position.y = rad * 18;
+			break;
+		case 3:
+			position.y = rad * 23;
+			break;
+		case 4:
+			position.y = rad * 28;
+			break;
+		case 5:
+			position.y = rad * 33;
+			break;
+		default:
+			break;
+		}
 		break;
 	default:
 		break;
