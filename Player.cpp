@@ -2,6 +2,8 @@
 #include "Novice.h"
 #include "PlayerBullet.h"
 #include "Hammer.h"
+#include "EnemyManager.h"
+#include "Enemy.h"
 
 cPlayer::cPlayer()
 {
@@ -28,6 +30,9 @@ void cPlayer::Init()
 	distance = 100.0f;
 	speed = 0.1f;
 	hp = 3;
+	isActive = true;
+	invicibleTimer = kInvicibleTime;
+	isInvincible = false;
 }
 
 void cPlayer::Operation(char* keys, char* preKeys)
@@ -58,6 +63,12 @@ void cPlayer::Operation(char* keys, char* preKeys)
 		distance -= 10;
 	}
 	BulletShot(keys, preKeys);
+
+	// forDebug
+	if (keys[DIK_DOWN] && !preKeys[DIK_DOWN])
+	{
+		hp--;
+	}
 }
 
 void cPlayer::Move()
@@ -67,17 +78,30 @@ void cPlayer::Move()
 	bullet->Move();
 }
 
-void cPlayer::Update()
+void cPlayer::Update(eScene& nextScene)
 {
+	InivicibleTimer();
 	velosity = { 0.0f,0.0f };
 	hammer->Update();
 	bullet->Update();
+
+	if (hp == 0)
+	{
+		isActive = false;
+	}
+	if (!isActive)
+	{
+		nextScene = RESULT;
+	}
 }
 
 void cPlayer::Draw()
 {
 	DrawLine(hammer->GetPosition());
-	Novice::DrawEllipse(int(position.x), int(position.y), int(rad), int(rad), 0.0f, 0xffffffff, kFillModeSolid);
+	if (invicibleTimer % 2 == 0)
+	{
+		Novice::DrawEllipse(int(position.x), int(position.y), int(rad), int(rad), 0.0f, 0xffffffff, kFillModeSolid);
+	}
 	hammer->Draw();
 	bullet->Draw();
 }
@@ -97,6 +121,33 @@ void cPlayer::BulletShot(char* keys, char* preKeys)
 			speed *= -1.0f;
 			bullet->BulletInit(position, hammer->GetPosition(), distance, i);
 			break;
+		}
+	}
+}
+
+void cPlayer::InivicibleTimer()
+{
+	if (isInvincible)
+	{
+		invicibleTimer--;
+		if (invicibleTimer == 0)
+		{
+			isInvincible = false;
+		}
+	}
+}
+
+void cPlayer::EnemyCollision(cEnemyManager* enemy_, int i_)
+{
+	if (!isInvincible && enemy_->GetEnemy(i_)->GetIsActive())
+	{
+		float enemyDistance = sqrtf(powf(enemy_->GetEnemy(i_)->GetPosition().x - position.x, 2) + powf(enemy_->GetEnemy(i_)->GetPosition().y - position.y, 2));
+		float radLen = rad + enemy_->GetEnemy(i_)->GetRad();
+		if (enemyDistance <= radLen)
+		{
+			hp--;
+			invicibleTimer = kInvicibleTime;
+			isInvincible = true;
 		}
 	}
 }

@@ -15,17 +15,67 @@ cEnemy::~cEnemy()
 
 void cEnemy::Init()
 {
-	position.x = 0.0f;
-	position.y = float(rand() % 1080);
+	position = { 0.0f,0.0f };
+	velosity = { 0.0f,0.0f };
 	rad = 32.0f;
 	hp = 1;
 	color = 0x000000ff;
+	isActive = false;
+}
+
+void cEnemy::Pop(int direction_, int spwanPosition)
+{
+	rad = 32.0f;
+	switch (direction_)
+	{
+	case 0:
+		position.x = -rad;
+		velosity = { 3.0f,0.0f };
+		break;
+	case 1:
+		position.x = rad + kScreenWidth;
+		velosity = { -3.0f,0.0f };
+		break;
+	default:
+		break;
+	}
+	switch (spwanPosition)
+	{
+	case 0:
+		position.y = rad * 5;
+		break;
+	case 1:
+		position.y = rad * 10;
+		break;
+	case 2:
+		position.y = rad * 15;
+		break;
+	case 3:
+		position.y = rad * 20;
+		break;
+	case 4:
+		position.y = rad * 25;
+		break;
+	case 5:
+		position.y = rad * 30;
+		break;
+	default:
+		break;
+	}
+	hp = 1;
+	color = 0x000000ff;
 	isActive = true;
+
 }
 
 void cEnemy::Damage()
 {
 	hp--;
+}
+
+void cEnemy::Move()
+{
+	Add(position, velosity);
 }
 
 void cEnemy::Update()
@@ -45,14 +95,17 @@ void cEnemy::Draw()
 
 void cEnemy::BulletColliosion(cPlayerBullet* bullet, Vector2 pos_, float rad_, int i)
 {
-	if (bullet->GetIsActive(i))
+	if (isActive)
 	{
-		float distance = sqrtf(powf(pos_.x - position.x, 2) + powf(pos_.y - position.y, 2));
-		float radLen = rad + rad_;
-		if (distance <= radLen)
+		if (bullet->GetIsActive(i))
 		{
-			isActive = false;
-			bullet->SetIsActive(false, i);
+			float distance = sqrtf(powf(pos_.x - position.x, 2) + powf(pos_.y - position.y, 2));
+			float radLen = rad + rad_;
+			if (distance < radLen)
+			{
+				isActive = false;
+				bullet->SetIsActive(false, i);
+			}
 		}
 	}
 }

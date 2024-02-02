@@ -9,7 +9,9 @@ public:
 	~cEnemy();
 
 	void Init();
+	void Pop(int direction_, int spwanPosition);
 	void Damage();
+	void Move();
 	void Update();
 	void Draw();
 
@@ -18,6 +20,8 @@ public:
 	//ゲッター////////////////////////
 	Vector2 GetPosition() { return position; }
 	int GetHp() { return hp; }
+	bool GetIsActive() { return isActive; }
+	float GetRad() { return rad; }
 
 	//セッター////////////////////////
 	void SetPosition(Vector2 position_) { position = position_; }
@@ -25,9 +29,9 @@ public:
 
 private:
 	Vector2 position;
+	Vector2 velosity;
 	float rad;
 	int hp;
 	int color;
 	bool isActive;
 };
-

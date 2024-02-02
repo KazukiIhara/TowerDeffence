@@ -1,27 +1,29 @@
 ﻿#include "SceneGame.h"
 #include "Novice.h"
 #include "Player.h"
-#include "Enemy.h"
+#include "EnemyManager.h"
 
 cSceneGame::cSceneGame()
 {
 	player = new cPlayer;
-	enemy = new cEnemy;
+	enemyManager = new cEnemyManager;
+	Init();
 }
 
 cSceneGame::~cSceneGame()
 {
 	delete player;
-	delete enemy;
+	delete enemyManager;
 }
 
 void cSceneGame::Init()
 {
+	currentGameFlame = 0;
 	player->Init();
-	enemy->Init();
+	enemyManager->Init();
 }
 
-void cSceneGame::Update(char* keys, char* preKeys)
+void cSceneGame::Update(char* keys, char* preKeys, eScene& nextScene)
 {
 	//　リセット
 	if (keys[DIK_R] && !preKeys[DIK_R])
@@ -35,10 +37,10 @@ void cSceneGame::Update(char* keys, char* preKeys)
 		a = 0;
 	}
 	// プレイヤーの入力受付処理ココから
-
 	player->Operation(keys, preKeys);
-	// プレイヤーの入力受付処理ココまで
 
+	// プレイヤーの入力受付処理ココまで
+	enemyManager->EnemyPop();
 
 	// マップチップのあたり判定ココから
 
@@ -47,32 +49,39 @@ void cSceneGame::Update(char* keys, char* preKeys)
 
 	// オブジェクト移動処理ココから
 	player->Move();
-
+	enemyManager->Move();
 	// オブジェクト移動処理ココまで
 
 
 	// あたり判定ココから
+	for (int i = 0; i < enemyManager->GetKEnemyNum(); i++)
+	{
+		player->EnemyCollision(enemyManager, i);
+	}
 	for (int i = 0; i < kBulletNum; i++)
 	{
-		enemy->BulletColliosion(player->GetBulletP(), player->GetBulletPosition(i), player->GetBulletRadius(), i);
+		enemyManager->BulletCollision(player->GetBulletP(), player->GetBulletPosition(i), player->GetBulletRadius(), i);
 	}
 	// あたり判定ココまで
 
 
 	// 状態の更新ココから
-	player->Update();
-	enemy->Update();
+	player->Update(nextScene);
+	enemyManager->Update();
+	currentGameFlame++;
 	// 状態の更新ココまで
 }
 
 void cSceneGame::Draw()
 {
 	player->Draw();
-	enemy->Draw();
+	enemyManager->Draw();
 }
 
 void cSceneGame::DrawDebug()
 {
 	Novice::ScreenPrintf(int(player->GetPosition().x) + 30, int(player->GetPosition().y) - 30,
 		"HP %d", player->GetHp());
+	Novice::ScreenPrintf(12, 24, "currentScene: GAME");
+	Novice::ScreenPrintf(12, 24 * 2, "currentGameFlame: %d", currentGameFlame);
 }

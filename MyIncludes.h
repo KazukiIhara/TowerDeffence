@@ -6,17 +6,29 @@
 #include <string>
 
 /*-----定数-----*/
+//世界
 const int kScreenWidth = 1920;//スクリーンの横幅
 const int kScreenHeight = 1080;//スクリーンの縦幅
 
+//プレイヤー
+const int kInvicibleTime = 70;//プレイヤーの無敵時間の長さ
 const int kBulletNum = 30;//弾の最大数
+
+//エネミー
+const int kEnemySpwanTime = 240;//通常敵のリポップタイム
 /*-----列挙型-----*/
+
+enum eTitleMenu
+{
+	GAMESTART,
+	EXIT
+};
 
 enum eDirection//方向列挙型
 {
 	UP,
-	LEFT,
 	DOWN,
+	LEFT,
 	RIGHT
 };
 
@@ -25,7 +37,6 @@ enum eScene//シーン列挙型
 	TITLE,
 	GAME,
 	RESULT,
-
 };
 
 enum eMapNum//マップチップ列挙型

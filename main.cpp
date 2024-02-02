@@ -13,6 +13,13 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 	char keys[256] = { 0 };
 	char preKeys[256] = { 0 };
 
+	// パッドのスティック入力を受け取る箱
+	int padLeftX = 0;
+	int padLeftY = 0;
+
+	// デッドゾーンの設定
+	Novice::SetJoystickDeadZone(0, 7000, 7000);
+
 	// new
 	cSceneManager* sceneManagaer = new cSceneManager;
 
@@ -24,6 +31,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 		// キー入力を受け取る
 		memcpy(preKeys, keys, 256);
 		Novice::GetHitKeyStateAll(keys);
+		Novice::GetAnalogInputLeft(0, &padLeftX, &padLeftY);
 
 		///
 		/// ↓更新処理ここから
