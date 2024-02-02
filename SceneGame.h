@@ -16,7 +16,9 @@ public:
 	void DrawDebug()override;
 
 private:
-	int currentGameFlame;
+	int flameTimer;
+	int currentGameSecond;
+	int currentLevel;
 	cPlayer* player;
 	cEnemyManager* enemyManager;
 };

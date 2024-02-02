@@ -18,7 +18,9 @@ cSceneGame::~cSceneGame()
 
 void cSceneGame::Init()
 {
-	currentGameFlame = 0;
+	flameTimer = 0;
+	currentGameSecond = 0;
+	currentLevel = EASY;
 	player->Init();
 	enemyManager->Init();
 }
@@ -68,7 +70,12 @@ void cSceneGame::Update(char* keys, char* preKeys, eScene& nextScene)
 	// 状態の更新ココから
 	player->Update(nextScene);
 	enemyManager->Update();
-	currentGameFlame++;
+	flameTimer++;
+	if (flameTimer % 60 == 0)
+	{
+		currentGameSecond++;
+		flameTimer = 0;
+	}
 	// 状態の更新ココまで
 }
 
@@ -82,6 +89,21 @@ void cSceneGame::DrawDebug()
 {
 	Novice::ScreenPrintf(int(player->GetPosition().x) + 30, int(player->GetPosition().y) - 30,
 		"HP %d", player->GetHp());
-	Novice::ScreenPrintf(12, 24, "currentScene: GAME");
-	Novice::ScreenPrintf(12, 24 * 2, "currentGameFlame: %d", currentGameFlame);
+	Novice::ScreenPrintf(12, 24, "CurrentScene: GAME");
+	Novice::ScreenPrintf(12, 24 * 2, "CurrentGameSecond: %d", currentGameSecond);
+	Novice::ScreenPrintf(12, 24 * 3, "Score: %d", player->GetScore());
+	switch (currentLevel)
+	{
+	case EASY:
+		Novice::ScreenPrintf(12, 24 * 4, "Level: EASY");
+		break;
+	case NOMAL:
+		Novice::ScreenPrintf(12, 24 * 4, "Level: NOMAL");
+		break;
+	case HARD:
+		Novice::ScreenPrintf(12, 24 * 4, "Level: HARD");
+		break;
+	default:
+		break;
+	}
 }

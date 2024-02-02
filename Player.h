@@ -14,6 +14,7 @@ public:
 	void Init();
 	void Operation(char* keys, char* preKeys);
 	void Move();
+	void Dead();
 	void Update(eScene& nextScene);
 	void Draw();
 	void DrawLine(Vector2 pos_);

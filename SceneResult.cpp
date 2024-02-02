@@ -35,5 +35,5 @@ void cSceneResult::Draw()
 
 void cSceneResult::DrawDebug()
 {
-	Novice::ScreenPrintf(12, 24, "currentScene: RESULT");
+	Novice::ScreenPrintf(12, 24, "CurrentScene: RESULT");
 }

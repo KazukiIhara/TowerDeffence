@@ -57,5 +57,5 @@ void cSceneTitle::Draw()
 
 void cSceneTitle::DrawDebug()
 {
-	Novice::ScreenPrintf(12, 24, "currentScene: TITLE");
+	Novice::ScreenPrintf(12, 24, "CurrentScene: TITLE");
 }

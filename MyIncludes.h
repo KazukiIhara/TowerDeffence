@@ -16,8 +16,14 @@ const int kBulletNum = 30;//弾の最大数
 
 //エネミー
 const int kEnemySpwanTime = 240;//通常敵のリポップタイム
-/*-----列挙型-----*/
 
+/*-----列挙型-----*/
+enum eLevel
+{
+	EASY,
+	NOMAL,
+	HARD
+};
 enum eTitleMenu
 {
 	GAMESTART,
