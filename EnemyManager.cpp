@@ -32,15 +32,14 @@ void cEnemyManager::EnemyPop()
 {
 	if (!enemySpwanTimer)
 	{
-		enemySpwanTimer = 300;
+		enemySpwanTimer = kEnemySpwanTime;
 		for (int i = 0; i < kEnemyNum; i++)
 		{
 			if (!enemy[i]->GetIsActive())
 			{
-				enemy[i]->Pop(LEFT, rand() % 5);
+				enemy[i]->Pop(rand() % 2, rand() % 5);
 				break;
 			}
-
 		}
 	}
 }
@@ -77,3 +76,5 @@ void cEnemyManager::Draw()
 		enemy[i]->Draw();
 	}
 }
+
+cEnemy* cEnemyManager::GetEnemy(int i_) { return enemy[i_]; }

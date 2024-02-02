@@ -15,6 +15,9 @@ public:
 	void Update();
 	void Draw();
 
+	int GetKEnemyNum() { return kEnemyNum; }
+
+	cEnemy* GetEnemy(int i_);
 private:
 	static const int kEnemyNum = 30;
 	cEnemy* enemy[kEnemyNum];

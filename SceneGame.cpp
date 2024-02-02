@@ -54,6 +54,10 @@ void cSceneGame::Update(char* keys, char* preKeys, eScene& nextScene)
 
 
 	// あたり判定ココから
+	for (int i = 0; i < enemyManager->GetKEnemyNum(); i++)
+	{
+		player->EnemyCollision(enemyManager, i);
+	}
 	for (int i = 0; i < kBulletNum; i++)
 	{
 		enemyManager->BulletCollision(player->GetBulletP(), player->GetBulletPosition(i), player->GetBulletRadius(), i);

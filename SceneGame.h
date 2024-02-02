@@ -2,7 +2,6 @@
 #include "BaseScene.h"
 
 class cPlayer;
-class cEnemy;
 class cEnemyManager;
 
 class cSceneGame :public cBaseScene
@@ -19,7 +18,6 @@ public:
 private:
 	int currentGameFlame;
 	cPlayer* player;
-	cEnemy* enemy;
 	cEnemyManager* enemyManager;
 };
 

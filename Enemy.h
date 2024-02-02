@@ -9,7 +9,7 @@ public:
 	~cEnemy();
 
 	void Init();
-	void Pop(eDirection direction_, int spwanPosition);
+	void Pop(int direction_, int spwanPosition);
 	void Damage();
 	void Move();
 	void Update();
@@ -21,6 +21,7 @@ public:
 	Vector2 GetPosition() { return position; }
 	int GetHp() { return hp; }
 	bool GetIsActive() { return isActive; }
+	float GetRad() { return rad; }
 
 	//セッター////////////////////////
 	void SetPosition(Vector2 position_) { position = position_; }

@@ -23,17 +23,17 @@ void cEnemy::Init()
 	isActive = false;
 }
 
-void cEnemy::Pop(eDirection direction_, int spwanPosition)
+void cEnemy::Pop(int direction_, int spwanPosition)
 {
 	rad = 32.0f;
 	switch (direction_)
 	{
-	case LEFT:
+	case 0:
 		position.x = -rad;
 		velosity = { 3.0f,0.0f };
 		break;
-	case RIGHT:
-		position.x = rad;
+	case 1:
+		position.x = rad + kScreenWidth;
 		velosity = { -3.0f,0.0f };
 		break;
 	default:
