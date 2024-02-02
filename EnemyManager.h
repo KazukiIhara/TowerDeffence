@@ -2,6 +2,7 @@
 #include "MyIncludes.h"
 
 class cEnemy;
+class cPlayer;
 class cPlayerBullet;
 class cEnemyManager
 {
@@ -9,9 +10,9 @@ public:
 	cEnemyManager();
 	~cEnemyManager();
 	void Init();
-	void EnemyPop();
+	void EnemyPop(int spawnTime_);
 	void Move();
-	void BulletCollision(cPlayerBullet* bullet_, Vector2 pos_, float rad_, int i_);
+	void BulletCollision(cPlayer* player_, cPlayerBullet* bullet_, Vector2 pos_, float rad_, int i_);
 	void Update();
 	void Draw();
 

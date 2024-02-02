@@ -1,6 +1,7 @@
 #include "Enemy.h"
 #include "Novice.h"
 #include <stdlib.h>
+#include "Player.h"
 #include "PlayerBullet.h"
 
 cEnemy::cEnemy()
@@ -93,7 +94,7 @@ void cEnemy::Draw()
 	}
 }
 
-void cEnemy::BulletColliosion(cPlayerBullet* bullet, Vector2 pos_, float rad_, int i)
+void cEnemy::BulletColliosion(cPlayer* player_, cPlayerBullet* bullet, Vector2 pos_, float rad_, int i)
 {
 	if (isActive)
 	{
@@ -103,6 +104,7 @@ void cEnemy::BulletColliosion(cPlayerBullet* bullet, Vector2 pos_, float rad_, i
 			float radLen = rad + rad_;
 			if (distance < radLen)
 			{
+				player_->SetScore(player_->GetScore() + 1);
 				isActive = false;
 				bullet->SetIsActive(false, i);
 			}
