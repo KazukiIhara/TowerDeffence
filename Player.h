@@ -51,5 +51,4 @@ private:
 	int hp;
 	int score;
 	int invicibleTimer;
-
 };
