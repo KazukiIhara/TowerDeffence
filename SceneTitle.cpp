@@ -52,7 +52,7 @@ void cSceneTitle::Update(char* keys, char* preKeys, eScene& nextScene)
 
 void cSceneTitle::Draw()
 {
-
+	Novice::DrawBox(960 - 128, 720, 256, 64, 0.0f, 0xffffffff, kFillModeWireFrame);
 }
 
 void cSceneTitle::DrawDebug()
