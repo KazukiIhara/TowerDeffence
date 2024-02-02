@@ -140,7 +140,7 @@
     <ClCompile Include="EnemyManager.cpp">
       <Filter>GamePrograms\Source\Object\Manager</Filter>
     </ClCompile>
-    <ClCompile Include="PlayerVFX.cpp">
+    <ClCompile Include="BaseParticle.cpp">
       <Filter>GamePrograms\Source\VFX</Filter>
     </ClCompile>
   </ItemGroup>
@@ -252,7 +252,7 @@
     <ClInclude Include="EnemyManager.h">
       <Filter>GamePrograms\Include\Object\Manager</Filter>
     </ClInclude>
-    <ClInclude Include="PlayerVFX.h">
+    <ClInclude Include="BaseParticle.h">
       <Filter>GamePrograms\Include\VFX</Filter>
     </ClInclude>
   </ItemGroup>

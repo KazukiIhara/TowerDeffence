@@ -19,7 +19,7 @@ public:
 	//セッター
 	void SetIsActive(bool isActive_, int i) { bullet[i].isActive = isActive_; }
 protected:
-	eBullet bullet[kBulletNum];
+	Bullet bullet[kBulletNum];
 	float speed;
 	float radius;
 	int color;

@@ -17,6 +17,9 @@ const int kBulletNum = 30;//弾の最大数
 //エネミー
 const int kEnemySpwanTime = 240;//通常敵のリポップタイム
 
+//パーティクル
+const int kParticleNum = 30;//パーティクルの数
+
 /*-----列挙型-----*/
 enum eLevel
 {
@@ -54,14 +57,23 @@ enum eMapNum//マップチップ列挙型
 };
 
 /*-----構造体-----*/
-struct eBullet//弾構造体
+struct Particle//パーティクル構造体
+{
+	Vector2 size;
+	Vector2 position;
+	Vector2 velosity;
+	float theta;
+	bool isActive;
+};
+
+struct Bullet//弾構造体
 {
 	Vector2 position;
 	Vector2 velosity;
 	bool isActive;
 };
 
-struct eTransform//int型のx,y構造体
+struct Transform//int型のx,y構造体
 {
 	int x;
 	int y;
