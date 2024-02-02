@@ -30,12 +30,9 @@ void cPlayer::Init()
 	distance = 100.0f;
 	speed = 0.1f;
 	hp = 3;
-<<<<<<< HEAD
 	isActive = true;
-=======
 	invicibleTimer = kInvicibleTime;
 	isInvincible = false;
->>>>>>> 敵とプレイヤーの当たり判定を実装
 }
 
 void cPlayer::Operation(char* keys, char* preKeys)

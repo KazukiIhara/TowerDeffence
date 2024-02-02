@@ -29,10 +29,8 @@ public:
 	Vector2 GetBulletPosition(int i);
 	float GetBulletRadius();
 	cPlayerBullet* GetBulletP();
-<<<<<<< HEAD
-=======
+
 	int GetScore() { return score; }
->>>>>>> 敵とプレイヤーの当たり判定を実装
 
 	//セッター////////////////////////
 	void SetPosition(Vector2 position_) { position = position_; }
@@ -48,11 +46,10 @@ private:
 	float distance;
 	float speed;
 	int hp;
-<<<<<<< HEAD
+
 	bool isActive;
-=======
+
 	int score;
 	bool isInvincible;
 	int invicibleTimer;
->>>>>>> 敵とプレイヤーの当たり判定を実装
 };
