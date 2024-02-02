@@ -46,11 +46,10 @@ private:
 	float rad;
 	float distance;
 	float speed;
-	int hp;
-
 	bool isActive;
-
-	int score;
 	bool isInvincible;
+	int hp;
+	int score;
 	int invicibleTimer;
+
 };
