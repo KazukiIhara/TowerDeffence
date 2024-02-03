@@ -57,6 +57,13 @@ enum eMapNum//マップチップ列挙型
 };
 
 /*-----構造体-----*/
+struct MenuTab
+{
+	Vector2 size;
+	Vector2 position;
+	int texture;
+};
+
 struct Particle//パーティクル構造体
 {
 	Vector2 size;

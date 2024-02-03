@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include "MyIncludes.h"
 #include "BaseScene.h"
 
@@ -11,9 +11,14 @@ public:
 	void Update(char* keys, char* preKeys, eScene& nextScene)override;
 	void Draw()override;
 	void DrawDebug()override;
+	void TitleSceneAnimation();
 
 private:
 	int selectMenu;
-	
+
+	/*Startメニュー*/
+	MenuTab start;
+
+	bool isPlayAnimation;
 };
 
