@@ -14,7 +14,6 @@
     <Filter Include="KamataEngine\Adapter">
       <UniqueIdentifier>{c6468eb4-788b-4a83-b207-a5f4804e56c5}</UniqueIdentifier>
     </Filter>
-
     <Filter Include="GamePrograms">
       <UniqueIdentifier>{93a32d14-ca9d-44c2-aad8-94f2e90adeb0}</UniqueIdentifier>
     </Filter>
@@ -68,13 +67,24 @@
     </Filter>
     <Filter Include="Plugs">
       <UniqueIdentifier>{d47c400d-72b4-4705-b056-085484ca45ed}</UniqueIdentifier>
-
     </Filter>
     <Filter Include="GamePrograms\Include\Object\Manager">
       <UniqueIdentifier>{bee14b23-fa7f-4ffa-80c0-0e91ccf66394}</UniqueIdentifier>
     </Filter>
     <Filter Include="GamePrograms\Source\Object\Manager">
       <UniqueIdentifier>{c6440439-59f6-410e-8346-064a0d647334}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GamePrograms\Include\VFX">
+      <UniqueIdentifier>{fa99ae28-e42c-4901-a762-f5172d33a58a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GamePrograms\Source\VFX">
+      <UniqueIdentifier>{47fea9fd-680c-43cc-9618-43dfa4a06470}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GamePrograms\Include\UI">
+      <UniqueIdentifier>{73a41fbe-f7d9-4546-a045-921dfb485c08}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GamePrograms\Source\UI">
+      <UniqueIdentifier>{de40a837-71fa-428d-8c12-ebfae6c32cfd}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -100,7 +110,6 @@
     <ClCompile Include="C:\KamataEngine\DirectXGame\base\StringUtility.cpp">
       <Filter>KamataEngine\Source</Filter>
     </ClCompile>
-
     <ClCompile Include="SceneManager.cpp">
       <Filter>GamePrograms\Source\Scene\SceneManager</Filter>
     </ClCompile>
@@ -133,10 +142,15 @@
     </ClCompile>
     <ClCompile Include="PlayerBullet.cpp">
       <Filter>GamePrograms\Source\Object\Derived</Filter>
-
     </ClCompile>
     <ClCompile Include="EnemyManager.cpp">
       <Filter>GamePrograms\Source\Object\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseParticle.cpp">
+      <Filter>GamePrograms\Source\VFX</Filter>
+    </ClCompile>
+    <ClCompile Include="GameUI.cpp">
+      <Filter>GamePrograms\Source\UI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -214,7 +228,6 @@
     <ClInclude Include="MyIncludes.h">
       <Filter>Plugs</Filter>
     </ClInclude>
-
     <ClInclude Include="SceneManager.h">
       <Filter>GamePrograms\Include\Scene\SceneManager</Filter>
     </ClInclude>
@@ -244,10 +257,15 @@
     </ClInclude>
     <ClInclude Include="PlayerBullet.h">
       <Filter>GamePrograms\Include\Object\Derived</Filter>
-
     </ClInclude>
     <ClInclude Include="EnemyManager.h">
       <Filter>GamePrograms\Include\Object\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseParticle.h">
+      <Filter>GamePrograms\Include\VFX</Filter>
+    </ClInclude>
+    <ClInclude Include="GameUI.h">
+      <Filter>GamePrograms\Include\UI</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

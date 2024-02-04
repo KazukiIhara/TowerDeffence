@@ -17,7 +17,7 @@ cSceneManager::~cSceneManager()
 
 void cSceneManager::Init()
 {
-	isDebug = true;
+	isDebug = false;
 	currentScene = TITLE;
 	nextScene = TITLE;
 	prevScene = TITLE;

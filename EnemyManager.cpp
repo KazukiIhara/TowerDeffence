@@ -1,6 +1,7 @@
 #include "EnemyManager.h"
 #include "Enemy.h"
 #include "PlayerBullet.h"
+#include "Player.h"
 
 cEnemyManager::cEnemyManager()
 {
@@ -28,11 +29,11 @@ void cEnemyManager::Init()
 	enemySpwanTimer = 0;
 }
 
-void cEnemyManager::EnemyPop()
+void cEnemyManager::EnemyPop(int spawnTime_)
 {
 	if (!enemySpwanTimer)
 	{
-		enemySpwanTimer = kEnemySpwanTime;
+		enemySpwanTimer = spawnTime_;
 		for (int i = 0; i < kEnemyNum; i++)
 		{
 			if (!enemy[i]->GetIsActive())
@@ -52,11 +53,11 @@ void cEnemyManager::Move()
 	}
 }
 
-void cEnemyManager::BulletCollision(cPlayerBullet* bullet_, Vector2 pos_, float rad_, int i_)
+void cEnemyManager::BulletCollision(cPlayer* player_, cPlayerBullet* bullet_, Vector2 pos_, float rad_, int i_)
 {
 	for (int i = 0; i < kEnemyNum; i++)
 	{
-		enemy[i]->BulletColliosion(bullet_, pos_, rad_, i_);
+		enemy[i]->BulletColliosion(player_, bullet_, pos_, rad_, i_);
 	}
 }
 

@@ -14,6 +14,7 @@ public:
 	void Init();
 	void Operation(char* keys, char* preKeys);
 	void Move();
+	void Dead();
 	void Update(eScene& nextScene);
 	void Draw();
 	void DrawLine(Vector2 pos_);
@@ -45,11 +46,12 @@ private:
 	float rad;
 	float distance;
 	float speed;
-	int hp;
-
 	bool isActive;
-
-	int score;
 	bool isInvincible;
+	int hp;
+	int score;
 	int invicibleTimer;
+
+	Transform life[3];
+	int lifeTexture;
 };

@@ -2,11 +2,13 @@
 #include "Novice.h"
 #include "Player.h"
 #include "EnemyManager.h"
+#include "GameUI.h"
 
 cSceneGame::cSceneGame()
 {
 	player = new cPlayer;
 	enemyManager = new cEnemyManager;
+	UI = new cGameUI;
 	Init();
 }
 
@@ -14,11 +16,14 @@ cSceneGame::~cSceneGame()
 {
 	delete player;
 	delete enemyManager;
+	delete UI;
 }
 
 void cSceneGame::Init()
 {
-	currentGameFlame = 0;
+	flameTimer = 0;
+	currentGameSecond = 0;
+	currentLevel = HARD;
 	player->Init();
 	enemyManager->Init();
 }
@@ -40,7 +45,20 @@ void cSceneGame::Update(char* keys, char* preKeys, eScene& nextScene)
 	player->Operation(keys, preKeys);
 
 	// プレイヤーの入力受付処理ココまで
-	enemyManager->EnemyPop();
+	switch (currentLevel)
+	{
+	case EASY:
+		enemyManager->EnemyPop(kEnemySpwanTime + 60);
+		break;
+	case NOMAL:
+		enemyManager->EnemyPop(kEnemySpwanTime);
+		break;
+	case HARD:
+		enemyManager->EnemyPop(kEnemySpwanTime - 120);
+		break;
+	default:
+		break;
+	}
 
 	// マップチップのあたり判定ココから
 
@@ -60,7 +78,7 @@ void cSceneGame::Update(char* keys, char* preKeys, eScene& nextScene)
 	}
 	for (int i = 0; i < kBulletNum; i++)
 	{
-		enemyManager->BulletCollision(player->GetBulletP(), player->GetBulletPosition(i), player->GetBulletRadius(), i);
+		enemyManager->BulletCollision(player, player->GetBulletP(), player->GetBulletPosition(i), player->GetBulletRadius(), i);
 	}
 	// あたり判定ココまで
 
@@ -68,20 +86,40 @@ void cSceneGame::Update(char* keys, char* preKeys, eScene& nextScene)
 	// 状態の更新ココから
 	player->Update(nextScene);
 	enemyManager->Update();
-	currentGameFlame++;
+	flameTimer++;
+	if (flameTimer % 60 == 0)
+	{
+		currentGameSecond++;
+		flameTimer = 0;
+	}
 	// 状態の更新ココまで
 }
 
 void cSceneGame::Draw()
 {
-	player->Draw();
 	enemyManager->Draw();
+	player->Draw();
+	UI->Draw();
 }
 
 void cSceneGame::DrawDebug()
 {
-	Novice::ScreenPrintf(int(player->GetPosition().x) + 30, int(player->GetPosition().y) - 30,
-		"HP %d", player->GetHp());
-	Novice::ScreenPrintf(12, 24, "currentScene: GAME");
-	Novice::ScreenPrintf(12, 24 * 2, "currentGameFlame: %d", currentGameFlame);
+	Novice::ScreenPrintf(int(player->GetPosition().x) + 30, int(player->GetPosition().y) - 30, "HP %d", player->GetHp());
+	Novice::ScreenPrintf(12, 24, "CurrentScene: GAME");
+	Novice::ScreenPrintf(12, 24 * 2, "CurrentGameSecond: %d", currentGameSecond);
+	Novice::ScreenPrintf(12, 24 * 3, "Score: %d", player->GetScore());
+	switch (currentLevel)
+	{
+	case EASY:
+		Novice::ScreenPrintf(12, 24 * 4, "Level: EASY");
+		break;
+	case NOMAL:
+		Novice::ScreenPrintf(12, 24 * 4, "Level: NOMAL");
+		break;
+	case HARD:
+		Novice::ScreenPrintf(12, 24 * 4, "Level: HARD");
+		break;
+	default:
+		break;
+	}
 }

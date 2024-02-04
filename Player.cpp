@@ -33,6 +33,12 @@ void cPlayer::Init()
 	isActive = true;
 	invicibleTimer = kInvicibleTime;
 	isInvincible = false;
+
+	for (int i = 0; i < 3; i++)
+	{
+		life[i] = { 0, 0 };
+	}
+	lifeTexture = Novice::LoadTexture("./Resources/Images/Game/Player/Life.png");
 }
 
 void cPlayer::Operation(char* keys, char* preKeys)
@@ -63,12 +69,6 @@ void cPlayer::Operation(char* keys, char* preKeys)
 		distance -= 10;
 	}
 	BulletShot(keys, preKeys);
-
-	// forDebug
-	if (keys[DIK_DOWN] && !preKeys[DIK_DOWN])
-	{
-		hp--;
-	}
 }
 
 void cPlayer::Move()
@@ -78,17 +78,21 @@ void cPlayer::Move()
 	bullet->Move();
 }
 
+void cPlayer::Dead()
+{
+	if (hp == 0)
+	{
+		isActive = false;
+	}
+}
+
 void cPlayer::Update(eScene& nextScene)
 {
 	InivicibleTimer();
 	velosity = { 0.0f,0.0f };
 	hammer->Update();
 	bullet->Update();
-
-	if (hp == 0)
-	{
-		isActive = false;
-	}
+	Dead();
 	if (!isActive)
 	{
 		nextScene = RESULT;
@@ -97,13 +101,26 @@ void cPlayer::Update(eScene& nextScene)
 
 void cPlayer::Draw()
 {
-	DrawLine(hammer->GetPosition());
 	if (invicibleTimer % 2 == 0)
 	{
+		DrawLine(hammer->GetPosition());
 		Novice::DrawEllipse(int(position.x), int(position.y), int(rad), int(rad), 0.0f, 0xffffffff, kFillModeSolid);
+		hammer->Draw();
 	}
-	hammer->Draw();
 	bullet->Draw();
+	switch (hp)
+	{
+	case 3:
+		Novice::DrawSprite(int(position.x - 120), int(position.y - 60), lifeTexture, 1.0f, 1.0f, 0.0f, 0xffffffff);
+	case 2:
+		Novice::DrawSprite(int(position.x - 80), int(position.y - 60), lifeTexture, 1.0f, 1.0f, 0.0f, 0xffffffff);
+	case 1:
+		Novice::DrawSprite(int(position.x - 40), int(position.y - 60), lifeTexture, 1.0f, 1.0f, 0.0f, 0xffffffff);
+		break;
+	default:
+		break;
+	}
+
 }
 
 void cPlayer::DrawLine(Vector2 pos_)

@@ -1,6 +1,7 @@
 ﻿#pragma once
 #include "MyIncludes.h"
 
+class cPlayer;
 class cPlayerBullet;
 class cEnemy
 {
@@ -15,7 +16,7 @@ public:
 	void Update();
 	void Draw();
 
-	void BulletColliosion(cPlayerBullet* bullet, Vector2 pos_, float rad_, int i);
+	void BulletColliosion(cPlayer* player_, cPlayerBullet* bullet, Vector2 pos_, float rad_, int i);
 
 	//ゲッター////////////////////////
 	Vector2 GetPosition() { return position; }
