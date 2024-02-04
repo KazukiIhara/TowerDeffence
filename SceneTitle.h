@@ -18,6 +18,7 @@ private:
 	bool isMainMenu;
 	int selectMenu;
 
+	MenuTab title;
 	MenuTab pressSpace;
 	MenuTab start;
 	MenuTab exitTab;

@@ -31,6 +31,12 @@ void cSceneTitle::Init()
 	exitTab.position.y = kScreenHeight / 2.0f + 350;
 	exitTab.texture = Novice::LoadTexture("./Resources/Images/title/Exit.png");
 
+	title.size.x = 1024.0f;
+	title.size.y = 128.0f;
+	title.position.x = kScreenWidth / 2.0f;
+	title.position.y = kScreenHeight / 2.0f;
+	title.texture = Novice::LoadTexture("./Resources/Images/title/Title.png");
+
 	isMainMenu = false;
 	isPlayAnimation = false;
 	selectMenu = GAMESTART;
@@ -89,6 +95,7 @@ void cSceneTitle::Draw()
 	}
 	else
 	{
+		DrawMenuTab(title);
 		DrawMenuTab(start);
 		DrawMenuTab(exitTab);
 		switch (selectMenu)
