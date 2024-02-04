@@ -101,6 +101,13 @@ void cPlayer::Update(eScene& nextScene)
 
 void cPlayer::Draw()
 {
+	if (invicibleTimer % 2 == 0)
+	{
+		DrawLine(hammer->GetPosition());
+		Novice::DrawEllipse(int(position.x), int(position.y), int(rad), int(rad), 0.0f, 0xffffffff, kFillModeSolid);
+		hammer->Draw();
+	}
+	bullet->Draw();
 	switch (hp)
 	{
 	case 3:
@@ -113,13 +120,7 @@ void cPlayer::Draw()
 	default:
 		break;
 	}
-	DrawLine(hammer->GetPosition());
-	if (invicibleTimer % 2 == 0)
-	{
-		Novice::DrawEllipse(int(position.x), int(position.y), int(rad), int(rad), 0.0f, 0xffffffff, kFillModeSolid);
-	}
-	hammer->Draw();
-	bullet->Draw();
+
 }
 
 void cPlayer::DrawLine(Vector2 pos_)

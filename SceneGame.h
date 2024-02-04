@@ -3,6 +3,7 @@
 
 class cPlayer;
 class cEnemyManager;
+class cGameUI;
 
 class cSceneGame :public cBaseScene
 {
@@ -21,5 +22,6 @@ private:
 	int currentLevel;
 	cPlayer* player;
 	cEnemyManager* enemyManager;
+	cGameUI* UI;
 };
 

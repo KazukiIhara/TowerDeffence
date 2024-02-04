@@ -80,6 +80,12 @@
     <Filter Include="GamePrograms\Source\VFX">
       <UniqueIdentifier>{47fea9fd-680c-43cc-9618-43dfa4a06470}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GamePrograms\Include\UI">
+      <UniqueIdentifier>{73a41fbe-f7d9-4546-a045-921dfb485c08}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GamePrograms\Source\UI">
+      <UniqueIdentifier>{de40a837-71fa-428d-8c12-ebfae6c32cfd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="C:\KamataEngine\DirectXGame\base\DirectXCommon.cpp">
@@ -142,6 +148,9 @@
     </ClCompile>
     <ClCompile Include="BaseParticle.cpp">
       <Filter>GamePrograms\Source\VFX</Filter>
+    </ClCompile>
+    <ClCompile Include="GameUI.cpp">
+      <Filter>GamePrograms\Source\UI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -254,6 +263,9 @@
     </ClInclude>
     <ClInclude Include="BaseParticle.h">
       <Filter>GamePrograms\Include\VFX</Filter>
+    </ClInclude>
+    <ClInclude Include="GameUI.h">
+      <Filter>GamePrograms\Include\UI</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

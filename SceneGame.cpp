@@ -2,11 +2,13 @@
 #include "Novice.h"
 #include "Player.h"
 #include "EnemyManager.h"
+#include "GameUI.h"
 
 cSceneGame::cSceneGame()
 {
 	player = new cPlayer;
 	enemyManager = new cEnemyManager;
+	UI = new cGameUI;
 	Init();
 }
 
@@ -14,6 +16,7 @@ cSceneGame::~cSceneGame()
 {
 	delete player;
 	delete enemyManager;
+	delete UI;
 }
 
 void cSceneGame::Init()
@@ -94,8 +97,9 @@ void cSceneGame::Update(char* keys, char* preKeys, eScene& nextScene)
 
 void cSceneGame::Draw()
 {
-	player->Draw();
 	enemyManager->Draw();
+	player->Draw();
+	UI->Draw();
 }
 
 void cSceneGame::DrawDebug()
