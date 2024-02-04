@@ -12,13 +12,15 @@ public:
 	void Draw()override;
 	void DrawDebug()override;
 	void TitleSceneAnimation();
+	void DrawMenuTab(MenuTab tab);
 
 private:
+	bool isMainMenu;
 	int selectMenu;
 
-	/*Startメニュー*/
+	MenuTab pressSpace;
 	MenuTab start;
-
+	MenuTab exitTab;
 	bool isPlayAnimation;
 };
 

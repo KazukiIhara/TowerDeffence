@@ -51,4 +51,7 @@ private:
 	int hp;
 	int score;
 	int invicibleTimer;
+
+	Transform life[3];
+	int lifeTexture;
 };

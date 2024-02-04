@@ -33,6 +33,12 @@ void cPlayer::Init()
 	isActive = true;
 	invicibleTimer = kInvicibleTime;
 	isInvincible = false;
+
+	for (int i = 0; i < 3; i++)
+	{
+		life[i] = { 0, 0 };
+	}
+	lifeTexture = Novice::LoadTexture("./Resources/Images/Game/Player/Life.png");
 }
 
 void cPlayer::Operation(char* keys, char* preKeys)
@@ -95,6 +101,18 @@ void cPlayer::Update(eScene& nextScene)
 
 void cPlayer::Draw()
 {
+	switch (hp)
+	{
+	case 3:
+		Novice::DrawSprite(int(position.x - 120), int(position.y - 60), lifeTexture, 1.0f, 1.0f, 0.0f, 0xffffffff);
+	case 2:
+		Novice::DrawSprite(int(position.x - 80), int(position.y - 60), lifeTexture, 1.0f, 1.0f, 0.0f, 0xffffffff);
+	case 1:
+		Novice::DrawSprite(int(position.x - 40), int(position.y - 60), lifeTexture, 1.0f, 1.0f, 0.0f, 0xffffffff);
+		break;
+	default:
+		break;
+	}
 	DrawLine(hammer->GetPosition());
 	if (invicibleTimer % 2 == 0)
 	{
