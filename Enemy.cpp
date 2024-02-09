@@ -24,7 +24,7 @@ void cEnemy::Init()
 	isActive = false;
 }
 
-void cEnemy::Pop(int direction_, int spwanPosition)
+void cEnemy::Pop(int direction_, int spawnPosition)
 {
 	rad = 32.0f;
 	switch (direction_)
@@ -32,7 +32,7 @@ void cEnemy::Pop(int direction_, int spwanPosition)
 	case 0:
 		position.x = -rad;
 		velosity = { 3.0f,0.0f };
-		switch (spwanPosition)
+		switch (spawnPosition)
 		{
 		case 0:
 			position.y = rad * 5;
@@ -59,7 +59,7 @@ void cEnemy::Pop(int direction_, int spwanPosition)
 	case 1:
 		position.x = rad + kScreenWidth;
 		velosity = { -3.0f,0.0f };
-		switch (spwanPosition)
+		switch (spawnPosition)
 		{
 		case 0:
 			position.y = rad * 8;
