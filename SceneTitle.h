@@ -24,4 +24,3 @@ private:
 	MenuTab exitTab;
 	bool isPlayAnimation;
 };
-
